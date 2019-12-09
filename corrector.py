@@ -17,6 +17,7 @@ def get_typos(loc):
     for line in ls:
         k, v = line.strip().split('->')
         d.update({k: v})
+        d.update({k.title(): v.title()})
 
     return d
 
@@ -150,8 +151,9 @@ if __name__ == '__main__':
             file_typos = get_typos_in_file(search_file, typos)
 
             if file_typos:
+                print('file_typos: {}'.format(file_typos))
                 print('Suggestions follow for file {}'.format(search_file))
                 iterate_over_file(search_file, typos, file_typos)
 
         except:
-            continue
+            pass
