@@ -1,4 +1,5 @@
 import argparse
+import fileinput
 import os
 import re
 import sys
@@ -119,13 +120,10 @@ def iterate_over_file(f, all_typos, found_typos):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-f', '--file',
-                        default='all_git_files_for_autocorrect.txt')
 
     args = parser.parse_args()
 
-    with open(args.file, 'r') as datafile:
-        all_files = [w.strip() for w in datafile.readlines()]
+    all_files = [f.strip() for f in fileinput.input()]
 
     # By default, use typos gathered at
     # https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines
