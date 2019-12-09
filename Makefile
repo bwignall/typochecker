@@ -1,10 +1,7 @@
 TC_PATH = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
-typocheck: all_git_files_for_typocheck.txt 
-	python $(TC_PATH)/corrector.py -f all_git_files_for_typocheck.txt
-
-all_git_files_for_typocheck.txt:
-	git ls-files > $@
+typocheck: 
+	git ls-files | python $(TC_PATH)/corrector.py
 
 data/wikipedia_common_misspellings_raw.txt:
 	echo 'Copy from https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines'
