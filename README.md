@@ -1,4 +1,4 @@
-A tool to help (semi-)automatically find typos in Git repositories. 
+A tool to help (semi-)automatically find typos.
 By default, uses Wikipedia as source of likely typos.
 
 # Usage:
