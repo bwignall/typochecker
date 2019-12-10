@@ -120,10 +120,20 @@ def iterate_over_file(f, all_typos, found_typos):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument('-d', '--dir', help='Search this directory, recursively, to find files to check')
 
     args = parser.parse_args()
 
-    all_files = [f.strip() for f in fileinput.input()]
+    if not args.dir:
+        all_files = [f.strip() for f in fileinput.input()]
+    else:
+        all_files = []
+        for root, dirs, files in os.walk(args.dir):
+            if any([d.startswith('.') for d in root.split(os.sep) if d != '.']):
+                # Ignore hidden directories (which are assumed to start with '.')
+                continue
+            else:
+                all_files.extend([os.path.join(root, filename) for filename in files])
 
     # By default, use typos gathered at
     # https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines
