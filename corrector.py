@@ -18,7 +18,6 @@ def get_typos(loc):
     for line in ls:
         k, v = line.strip().split('->')
         d.update({k: v})
-        d.update({k.title(): v.title()})
 
     return d
 
@@ -139,10 +138,18 @@ if __name__ == '__main__':
     # https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines
     TYPOS_LOC = os.path.join(os.path.dirname(__file__),
                              'data', 'wikipedia_common_misspellings.txt')
+    EXTRA_TYPOS_LOC = os.path.join(os.path.dirname(__file__),
+                             'data', 'extra_endings.txt')
 
     print('Getting list of typos')
     print('Information from https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines')
     typos = get_typos(TYPOS_LOC)
+    extra_typos = get_typos(EXTRA_TYPOS_LOC)
+
+    typos.update(extra_typos)
+
+    titled_typos = {k.title(): v.title() for k, v in typos.items()}
+    typos.update(titled_typos)
 
     file_beginnings_to_ignore = ['LICENSE']
     file_endings_to_ignore = ['.exe', '.jar', '.xml', '.zip']
@@ -159,7 +166,7 @@ if __name__ == '__main__':
             file_typos = get_typos_in_file(search_file, typos)
 
             if file_typos:
-                print('file_typos: {}'.format(file_typos))
+                # print('file_typos: {}'.format(file_typos))
                 print('Suggestions follow for file {}'.format(search_file))
                 iterate_over_file(search_file, typos, file_typos)
 

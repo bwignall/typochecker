@@ -6,6 +6,9 @@ typocheck:
 typocheckDir: 
 	git ls-files | python $(TC_PATH)/corrector.py -d .
 
+data/extra_endings.txt:
+	python add_extra_endings.py
+
 data/wikipedia_common_misspellings_raw.txt:
 	echo 'Copy from https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines'
 
