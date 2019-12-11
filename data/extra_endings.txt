@@ -1,0 +1,65 @@
+abondond->abandoned
+adresd->address, addressed
+agregated->aggregated
+annointd->anointed
+archetectd->architected
+attemtd->attempted
+comisiond->commissioned
+comissiond->commissioned
+commisiond->commissioned
+conciderd->considered
+condidtiond->conditioned
+contiand->contains, contained
+controlld->controlled
+dicoverd->discovers, discovered
+dissapeard->disappears, disappeared
+dissappeard->disappears, disappeared
+engieneerd->engineers, engineered
+propogated->propagated
+recomendd->recommended
+refereced->referenced
+referemced->referenced
+referrenced->referenced
+refrenced->referenced
+soudnd->sounded
+suceedd->succeeds, succeeded
+suroundd->surrounds, surrounded
+abreviates->abbreviates
+achives->achieves, archives
+agres->agrees
+aleges->alleges
+aquires->acquires
+beseiges->besieges
+caluclates->calculates
+caluculates->calculates
+calulates->calculates
+catergorizes->categorizes
+challanges->challenges
+consolodates->consolidates
+consumates->consummates
+deffines->defines
+devides->divides
+dispences->dispenses
+eminates->emanates
+exerbates->exacerbates
+experiances->experiences
+formallizes->formalizes
+homogeneizes->homogenizes
+immitates->imitates
+inctroduces->introduces
+infilitrates->infiltrates
+lieks->likes
+manufatures->manufactures
+percieves->perceives
+persues->pursues
+premeires->premieres
+prooves->proves
+recides->resides
+releives->relieves
+rennovates->renovates
+ressembles->resembles
+siezes->seizes, sizes
+stuctures->structures
+suprises->surprises
+suprizes->surprises
+surprizes->surprises
