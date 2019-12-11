@@ -128,18 +128,21 @@ if __name__ == '__main__':
     else:
         all_files = []
         for root, dirs, files in os.walk(args.dir):
-            if any([d.startswith('.') for d in root.split(os.sep) if d != '.']):
-                # Ignore hidden directories (which are assumed to start with '.')
+            if any([d.startswith('.') for d in root.split(os.sep)
+                    if d != '.']):
+                # Ignore hidden directories
+                # (which are assumed to start with '.')
                 continue
             else:
-                all_files.extend([os.path.join(root, filename) for filename in files])
+                all_files.extend([os.path.join(root, filename)
+                                  for filename in files])
 
     # By default, use typos gathered at
     # https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines
     TYPOS_LOC = os.path.join(os.path.dirname(__file__),
                              'data', 'wikipedia_common_misspellings.txt')
     EXTRA_TYPOS_LOC = os.path.join(os.path.dirname(__file__),
-                             'data', 'extra_endings.txt')
+                                   'data', 'extra_endings.txt')
 
     print('Getting list of typos')
     print('Information from https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines')
@@ -159,7 +162,7 @@ if __name__ == '__main__':
             continue
 
         if any([search_file.split(os.sep)[-1].startswith(e)
-                for e in file_endings_to_ignore]):
+                for e in file_beginnings_to_ignore]):
             continue
 
         try:
