@@ -152,7 +152,7 @@ if __name__ == '__main__':
     typos.update(titled_typos)
 
     file_beginnings_to_ignore = ['LICENSE']
-    file_endings_to_ignore = ['.exe', '.jar', '.xml', '.zip']
+    file_endings_to_ignore = ['~', '.exe', '.gz', '.jar', '.xml', '.zip']
 
     for search_file in all_files:
         if any([search_file.endswith(e) for e in file_endings_to_ignore]):
