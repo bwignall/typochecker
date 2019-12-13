@@ -22,14 +22,25 @@ def get_typos(loc):
     return d
 
 
+def get_typos_in_string(s, known_typos):
+    """
+    >>> get_typos_in_string('foo buzz', {'foo': 'bar', 'bazz': 'buzz'})
+    ['foo']
+
+    >>> get_typos_in_string('foo bazz', {'foo': 'bar', 'bazz': 'buzz'})
+    ['bazz', 'foo']
+    """
+    words = re.findall(r'[\w]+', s)
+    uniq_words = set(words)
+
+    return sorted([w for w in uniq_words if w in known_typos])
+
+
 def get_typos_in_file(f, known_typos):
     with open(f, 'r') as ff:
         lines = ff.readlines()
 
-    words = re.findall(r'[\w]+', ' '.join(lines))
-    uniq_words = set(words)
-
-    return [w for w in uniq_words if w in known_typos]
+    return get_typos_in_string(' '.join(lines), known_typos)
 
 
 def get_fix(line, typo_span, suggestion, orig):
@@ -145,17 +156,17 @@ if __name__ == '__main__':
                                    'data', 'extra_endings.txt')
 
     print('Getting list of typos')
-    print('Information from https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines')
-    typos = get_typos(TYPOS_LOC)
-    extra_typos = get_typos(EXTRA_TYPOS_LOC)
-
-    typos.update(extra_typos)
+    typo_src = 'https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines'
+    print('Information from {}'.format(typo_src))
+    typos = {}
+    for fs in [TYPOS_LOC, EXTRA_TYPOS_LOC]:
+        typos.update(get_typos(fs))
 
     titled_typos = {k.title(): v.title() for k, v in typos.items()}
     typos.update(titled_typos)
 
     file_beginnings_to_ignore = ['LICENSE']
-    file_endings_to_ignore = ['~', '.exe', '.gz', '.jar', '.xml', '.zip']
+    file_endings_to_ignore = ['~', '.exe', '.gz', '.jar', '.pdf', '.xml', '.zip']
 
     for search_file in all_files:
         if any([search_file.endswith(e) for e in file_endings_to_ignore]):

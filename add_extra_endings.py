@@ -1,7 +1,5 @@
 import argparse
-import fileinput
 import os
-import re
 import sys
 
 # Assumption: long lines (e.g., in JSON files) should be skipped
@@ -10,8 +8,8 @@ MAX_LINE_LEN = 200
 
 def get_typos(loc):
     print('opening {}'.format(loc))
-    with open(loc, 'r') as f:
-        ls = f.readlines()
+    with open(loc, 'r') as fname:
+        ls = fname.readlines()
 
     d = {}
 
@@ -37,7 +35,7 @@ def get_addition(all_typos, known_ending, unknown_ending):
 
             try:
                 response_raw = input(('Correction ("!h" for help), default to {}: '
-                                    ).format(suggestion))
+                                      ).format(suggestion))
             except:
                 continue
 
