@@ -30,7 +30,7 @@ setup(
         'Topic :: Text Processing',
         'Topic :: Utilities',
 
-        'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
+        'License :: OSI Approved :: MIT',
 
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
