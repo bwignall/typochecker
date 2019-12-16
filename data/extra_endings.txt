@@ -63,3 +63,86 @@ stuctures->structures
 suprises->surprises
 suprizes->surprises
 surprizes->surprises
+accurary->accuracy
+symetric->symmetric
+eqaution->equation
+expantions->expansions
+exteme->extreme
+eroneous->erroneous
+unerflow->underflow
+numberic->numeric
+satble->stable
+tbough->trough, though, tough, bough
+betweeen->between
+becuase->because
+previosuly->previously
+interprete->interpret, interpreter, interpreted, interprets
+speicalize->specialize
+unserstand->understand
+disarded->discarded, disarmed
+decompostion->decomposition
+termimation->termination
+dimentional->dimensional
+spurous->spurious
+epsion->epsilon, epson
+inceased->increased, incensed
+cutof->cutoff
+deciaml->decimal
+formual->formula, formal
+corrrectly->correctly
+mulyiple->multiple
+diagnising->diagnosing
+poission->poisson
+platfrom->platform
+trunctate->truncate
+decimla->decimal
+negleted->neglected
+useage->usage
+accumpany->accompany
+sequared->squared
+authorititive->authoritative
+independendly->independently
+machinary->machinery
+superceded->superseded
+mathemetical->mathematical
+irelevant->relevant, irrelevant
+differentiaton->differentiation
+appplication->application
+coull->could, cull
+lenth->tenth, lents, length, lent
+quess->quest, quests, guess
+statisticans->statisticians
+inocuous->innocuous
+predicable->predictable
+asymetrical->asymmetrical
+detemine->determine
+inagine->imagine
+fonctions->functions
+infinte->infinite
+pressimistic->pessimistic
+comparible->compatible, comparable
+aproximation->approximation
+limitied->limited
+trigomometric->trigonometric
+evalutations->evaluations
+allegic->allergic
+ambguity->ambiguity
+unnnamed->unnamed
+predicably->predictably
+formated->formatted
+patform->platform
+noticable->noticeable
+ellliptic->elliptic
+explictly->explicitly
+accademia->academia
+probablility->probability
+recomended->recommended
+plaform->platform
+historial->historical 
+contructors->constructors  
+allegic->allergic
+ambguity->ambiguity
+unnnamed->unnamed
+predicably->predictably
+formated->formatted
+patform->platform
