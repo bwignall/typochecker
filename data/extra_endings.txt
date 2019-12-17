@@ -69,7 +69,7 @@ athough->although
 atisfy->satisfy
 attemtd->attempted
 authorititive->authoritative
-awat->await
+awat->await, away
 awkard->awkward
 bceomes->becomes
 beause->because
@@ -711,7 +711,7 @@ sustituted->substituted
 sybmols->symbols
 symetric->symmetric
 sytactically->syntactically
-taks->task
+taks->takes, task
 tandards->standards
 tandard->standard
 tand->stand
