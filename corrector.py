@@ -131,6 +131,10 @@ def iterate_over_file(f, all_typos, found_typos):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-d', '--dir', help='Search this directory, recursively, to find files to check')
+    parser.add_argument('-w', '--whitelist_word', action='append',
+                        help='Do not consider this word a typo. Argument can be repeated')
+    parser.add_argument('-W', '--whitelist_file', action='append',
+                        help='A file containing words that should not be considered typos. Argument can be repeated')
 
     args = parser.parse_args()
 
@@ -162,6 +166,25 @@ if __name__ == '__main__':
     for fs in [TYPOS_LOC, EXTRA_TYPOS_LOC]:
         typos.update(get_typos(fs))
 
+    # Remove whitelisted words from typos
+
+    for word in args.whitelist_word or []:
+        del typos[word.lower()]
+
+    for whitelist_file in args.whitelist_file or []:
+        try:
+            with open(whitelist_file, 'r') as ff:
+                lines = ff.readlines()
+
+            words = re.findall(r'[\w]+', ' '.join(lines))
+
+            for word in words:
+                del typos[word.lower()]
+
+        except:
+            print('Encountered problem while trying to trying to read whitelist file {}'.format(whitelist_file))
+
+    # Remove some case sensitivity
     titled_typos = {k.title(): v.title() for k, v in typos.items()}
     typos.update(titled_typos)
 
