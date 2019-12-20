@@ -31,6 +31,36 @@ automatically.
 (`Ctrl-D` may also work.)
 * For help, enter `!h`.
 
+## Whitelist words
+
+Not all nominal typos are genuine typos. For example, your domain may use 
+terminology that has spelling similar to some non-technical words. To have 
+those not flagged as typos, you can specify whitelisted words. These may 
+be specified directly on the command invocation, via a file, or both.
+
+Examples, direct:
+```shell script
+python corrector.py --dir BASE_DIRECTORY -w exampleone
+python corrector.py --dir BASE_DIRECTORY -w exampleone -w exampletwo
+```
+
+Examples, whitelist file:
+```shell script
+python corrector.py --dir BASE_DIRECTORY -W fileone
+python corrector.py --dir BASE_DIRECTORY -W fileone -W filetwo
+```
+
+Examples, mixed:
+```shell script
+python corrector.py --dir BASE_DIRECTORY -w wordone -W fileone
+python corrector.py --dir BASE_DIRECTORY -w wordone -w wordtwo -W fileone
+python corrector.py --dir BASE_DIRECTORY -w wordone -W fileone -W filetwo
+```
+
+Note that words are listed explicitly via `-w` (i.e., lowercase) and 
+files are via `-W` (i.e., uppercase); long-form options exist for both;
+add `-h`/`--help` for details. 
+
 # Gotchas
 
 The tool splits on non-alphabetical characters, 
