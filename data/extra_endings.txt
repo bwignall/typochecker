@@ -9,6 +9,7 @@ acceped->accepted
 acceptd->accepted
 accepte->accepted
 acces->access
+accumlate->accumulate
 accumpany->accompany
 accurary->accuracy
 achives->achieves, archives
@@ -32,6 +33,7 @@ alernative->alternative
 algn->align
 algoritghms->algorithms
 alig->align
+alignemnt->alignment
 allcoate->allocate
 allcoated->allocated
 allegic->allergic
@@ -41,6 +43,7 @@ alreay->already
 alterantive->alternative
 alterate->alternate
 ambguity->ambiguity
+ambigous->ambiguous
 ambigutiy->ambiguity
 amde->made
 anages->manages
@@ -75,6 +78,7 @@ archetectd->architected
 architectuers->architectures
 arcine->arline, arcane, arcsine, arcing, racine
 arcitectures->architectures
+argumens->arguments
 ariance->variance
 arithemtic->arithmetic
 arive->arrive
@@ -142,6 +146,7 @@ boudns->bounds
 bove->above
 bstractions->abstractions
 bufferd->buffered
+buider->builder
 builing->building
 buit->built
 bulding->building
@@ -203,6 +208,7 @@ coeficient->coefficient
 cofficient->coefficient
 collec->collect
 comibnation->combination
+comilation->compilation
 comisiond->commissioned
 comissiond->commissioned
 comletely->completely
@@ -214,6 +220,7 @@ comms->commas
 comon->common
 comparible->compatible, comparable
 comparion->comparison
+compatbile->compatible
 compatibiity->compatibility
 compatibilty->compatibility
 compatibliity->compatibility
@@ -271,6 +278,7 @@ correpond->correspond
 correpondence->correspondence
 corresponing->corresponding
 corret->correct
+corretly->correctly
 corrrectly->correctly
 cosl->cols
 costraint->constraint
@@ -298,6 +306,7 @@ decompositon->decomposition
 decompostion->decomposition
 decopose->decompose
 defaut->default
+defered->deferred
 deffines->defines
 definiely->definitely
 defintiions->definitions
@@ -336,6 +345,8 @@ dicussion->discussion
 differentiaton->differentiation
 differet->different
 differnet->different
+dimenion->dimension
+dimensinos->dimensions
 dimensonal->dimensional
 dimentional->dimensional
 dimnsion->dimension
@@ -380,6 +391,7 @@ elict->elicit
 elimianted->eliminated
 elliptice->elliptic
 ellliptic->elliptic
+ellpsis->ellipsis
 elminated->eliminated
 elminate->eliminate
 elsehwere->elsewhere
@@ -429,11 +441,15 @@ everythig->everything
 everythng->everything
 evision->envision, revision
 evnt->event
+exahustive->exhaustive
 exanded->expanded
 exapmle->example
 exaustive->exhaustive
+exceution->execution
 exchage->exchange
 excpt->except
+excution->execution
+execption->exception
 exected->expected, executed
 exectuable->executable
 exension->extension
@@ -482,6 +498,7 @@ flaot->float
 flatteing->flattening
 fliters->filters
 floting->floating
+fnid->find
 fnot->font
 followd->followed
 fonctions->functions
@@ -500,6 +517,7 @@ frace->france
 fracional->fractional
 franfurter->frankfurter
 froms->forms
+funciton->function
 functin->function
 functionailty->functionality
 functionlity->functionality
@@ -516,6 +534,7 @@ genreators->generators
 givin->giving
 givng->giving
 gloabl->global
+globl->global
 gorw->grow
 goups->groups
 gren->green
@@ -584,8 +603,11 @@ infx->infix
 ingore->ignore
 ininite->infinite
 initalisation->initialisation
+initalization->initialization
 initalize->initialize
+initalizes->initializes
 initialzation->initialization
+initilization->initialization
 inituialization->initialization
 inlne->inline
 inocuous->innocuous
@@ -605,6 +627,7 @@ intead->instead
 inteface->interface
 integra->integral
 intentionaly->intentionally
+intepreter->interpreter
 interaces->interfaces
 interally->internally
 interations->interactions, iterations
@@ -613,6 +636,10 @@ internall->internally
 interpeter->interpreter
 interprete->interpret, interpreter, interpreted, interprets
 intersting->interesting
+intger->integer
+intialized->initialized
+intialize->initialize
+intializes->initializes
 intrday->intraday
 intreactions->interactions
 introducion->introduction
@@ -643,6 +670,7 @@ ixed->fixed, mixed
 keyord->keyword
 knonw->known
 kutosis->kurtosis
+lables->labels
 lael->label
 lamda->lambda
 lamdas->lambdas
@@ -653,21 +681,25 @@ leae->leave
 leagl->legal
 legitmately->legitimately
 lengh->length
+lenghs->lengths
 lengt->length
 lenth->tenth, lents, length, lent
 lesat->least
 lettuc->lettuce
+lfited->lifted
 librarie->libraries
 lieks->likes
 limination->elimination
 limitied->limited
 linke->linked
+linse->lines
 litte->little
 liux->linux
 lnes->lens
 lnks->links
 loadr->loader
 localy->locally
+locls->locals
 logc->logic
 logn->long
 looe->loose
@@ -675,6 +707,7 @@ lopo->loop
 lopos->loops
 lowast->lowest
 ltest->latest
+maanger->manager
 machinary->machinery
 machin->machine
 maintianed->maintained
@@ -688,6 +721,7 @@ maye->maybe
 measurments->measurements
 mehtod->method
 mesage->message
+mesasge->message
 messag->message
 mesures->measures
 metdata->metadata
@@ -750,6 +784,7 @@ nterval->interval
 nuls->nulls
 numberic->numeric
 occations->occasions
+occupany->occupancy
 occurrenc->occurrence
 ocur->occur
 odered->ordered
@@ -769,6 +804,7 @@ oogle->google
 opend->opened
 operacional->operational
 operatore->operator, operators
+oposed->opposed
 oprhan->orphan
 optimistaion->optimisation
 optimiz->optimize
@@ -789,6 +825,7 @@ orthognal->orthogonal
 orus->ours
 orward->forward
 oston->boston
+othe->other
 otheriwse->otherwise
 othewise->otherwise
 othre->other
@@ -797,6 +834,7 @@ ouside->outside
 outputing->outputting
 oveflow->overflow
 overfow->overflow
+overide->override
 overriden->overridden
 overrie->override
 pacakge->package
@@ -811,6 +849,7 @@ paramters->parameters
 paricular->particular
 parital->partial
 pariwise->pairwise
+parllel->parallel
 parteo->pareto
 passd->passed
 passs->pass, passes
@@ -846,9 +885,11 @@ porcessing->processing
 possbily->possibly
 possibilites->possibilities
 postpostive->postpositive
+powe->power
 pplications->applications
 practicallity->practicality
 prcessing->processing
+precison->precision
 predicable->predictable
 predicably->predictably
 predicte->predicate
@@ -873,6 +914,7 @@ probabilty->probability
 probablility->probability
 probablity->probability
 probaby->probably
+proceses->processes
 productin->production
 progam->program
 programatic->programmatic
@@ -909,6 +951,7 @@ recursivly->recursively
 recusive->recursive
 reda->read
 redcible->reducible
+reduciton->reduction
 redudant->redundant
 redues->reduces
 redunant->redundant
@@ -933,6 +976,7 @@ repeate->repeated
 repesentationally->representationally
 repesentational->representational
 repesentation->representation
+representin->representing
 represetnation->representation
 requrements->requirements
 requre->require
@@ -942,6 +986,7 @@ ressembles->resembles
 restor->restore
 restrcted->restricted
 restrction->restriction
+resued->rescued, reused
 retrive->retrieve
 reuslt->result
 revents->prevents
@@ -954,6 +999,7 @@ rigt->right
 riis->iris
 rinciples->principles
 rint->print
+rnge->range
 roblem->problem
 rogrammer->programmer
 rogramming->programming
@@ -1035,10 +1081,12 @@ squence->sequence
 stac->stack
 staic->static
 statisticans->statisticians
+statments->statements
 steram->stream
 stoer->store
 stpe->step
 stps->stops, steps
+stricly->strictly
 stricness->strictness
 strightforward->straightforward
 stright->straight
@@ -1054,6 +1102,7 @@ styl->style
 subclasse->subclassed, subclasses
 subclasss->subclass, subclasses
 subcommitee->subcommittee
+sublcass->subclass
 subsitution->substitution
 substitued->substituted
 subtitutes->substitutes
@@ -1081,8 +1130,10 @@ suroundd->surrounds, surrounded
 surprizes->surprises
 sustituted->substituted
 sweetend->sweetened
+swor->sword
 swtch->switch
 sybmols->symbols
+sychronous->synchronous
 symetric->symmetric
 syntetic->synthetic
 sytactically->syntactically
@@ -1169,6 +1220,7 @@ unles->unless
 unnnamed->unnamed
 unsatifiable->unsatisfiable
 unserstand->understand
+unsiged->unsigned
 unversally->universally
 upport->support
 useage->usage
@@ -1203,6 +1255,7 @@ wildards->wildcards
 wildcars->wildcards
 witout->without
 wner->owner
+workround->workaround
 woth->worth
 woud->would
 wraped->wrapped
@@ -1215,6 +1268,7 @@ xford->oxford
 xpression->expression
 xtensible->extensible
 yael->yale
+yieled->yielded
 ymposium->symposium
 ystems->systems
 ystem->system
