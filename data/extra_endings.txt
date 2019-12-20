@@ -125,7 +125,9 @@ assignent->assignment
 assinged->assigned
 assinging->assigning
 assingments->assignments
+assming->assuming
 assocated->associated
+assuing->assuming
 assum->assume
 asymetrical->asymmetrical
 atached->attached
@@ -181,6 +183,7 @@ boudns->bounds
 bounary->boundary
 boundries->boundaries
 bove->above
+branchs->branches
 broacast->broadcast
 bstractions->abstractions
 bufer->buffer
@@ -241,6 +244,7 @@ clases->classes, clashes, clauses
 classc->classic
 classe->class, classes
 classifers->classifiers
+classs->classes
 claues->clause
 clober->clobber
 closs->closes
@@ -353,6 +357,7 @@ costructor->constructor
 costy->costly
 coull->could, cull
 coures->course
+creat->create
 creats->creates
 critera->criteria
 curent->current
@@ -382,6 +387,7 @@ decriptions->descriptions
 defaut->default
 defered->deferred
 deffines->defines
+defin->define
 definiely->definitely
 defintiions->definitions
 defualt->default
@@ -467,6 +473,7 @@ doubl->double, doubly, doubt
 dowloaded->downloaded
 dpth->depth
 droped->dropped
+dscriptor->descriptor
 duing->during
 duplicte->duplicate
 earthden->earthen
@@ -476,8 +483,10 @@ econds->seconds
 ecreate->recreate
 edar->dear
 edns->ends
+efault->default
 eference->reference
 effciency->efficiency
+efficienty->efficiently
 efort->effort
 eigenvecotrs->eigenvectors
 elad->lead
@@ -682,12 +691,14 @@ higly->highly
 historial->historical 
 hlaf->half
 homogeneizes->homogenizes
+hort->short
 hwere->where
 icrosoft->microsoft
 identation->indentation
 idential->identical
 identifer->identifier
 identiyt->identity
+idexing->indexing
 idices->indices
 idividual->individual
 idom->idiom
@@ -759,6 +770,7 @@ initilization->initialization
 inituialization->initialization
 inlcude->include
 inlne->inline
+inlude->include
 inocuous->innocuous
 inptus->inputs
 insantiates->instantiates
@@ -823,6 +835,7 @@ isused->issued, misused
 iteartion->iteration
 iteger->integer
 itermediate->intermediate
+iternally->internally
 iterpolation->interpolation
 iterstions->iterations
 iterval->interval
@@ -942,6 +955,7 @@ newsrgoups->newsgroups
 newy->newly
 nference->inference
 nfinity->infinity
+nicode->unicode
 niform->uniform
 nity->unity
 niversity->university
@@ -974,6 +988,7 @@ oherwise->otherwise
 oline->online
 olutions->solutions
 omeg->omega
+omething->something
 omponent->component
 omputer->computer
 onec->once
@@ -1007,6 +1022,7 @@ orman->roman
 ormat->format
 orpha->orphan
 orthognal->orthogonal
+ortran->fortran
 orus->ours
 orward->forward
 oston->boston
@@ -1197,6 +1213,7 @@ remvoes->removes
 renae->rename
 rennovates->renovates
 reodering->reordering
+reolad->reload
 repalce->replace
 repeate->repeated
 repesentationally->representationally
@@ -1242,6 +1259,7 @@ rigt->right
 riis->iris
 rinciples->principles
 rint->print
+rivate->private
 rnames->renames
 rnge->range
 roblem->problem
@@ -1251,6 +1269,7 @@ roote->root, rooted, roots
 rouding->rounding
 roud->proud, round
 rovide->provide
+rshape->reshape
 rturns->returns
 runime->runtime
 runnbale->runnable
@@ -1492,6 +1511,7 @@ ture->true
 tyep->type
 tyle->style
 uable->usable, unable
+ublic->public
 ubound->upbound, unbound
 uconstrained->unconstrained
 uderlying->underlying
@@ -1563,6 +1583,7 @@ wildcars->wildcards
 witout->without
 wner->owner
 workround->workaround
+worl->world
 woth->worth
 woud->would
 wraped->wrapped
