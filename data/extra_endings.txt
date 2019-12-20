@@ -260,6 +260,7 @@ coeficient->coefficient
 cofficient->coefficient
 collec->collect
 colums->columns
+combind->combined
 comibnation->combination
 comilation->compilation
 comisiond->commissioned
@@ -545,6 +546,7 @@ etablishes->establishes
 etxt->text
 euclidian->euclidean
 euqal->equal
+evalated->evaluated
 evalutations->evaluations
 evalute->evaluate
 evalutes->evaluates
@@ -652,6 +654,7 @@ fundamenta->fundamental
 fundmental->fundamental
 funn->funny
 funtions->functions
+funtor->functor
 furter->further
 garded->guarded
 geater->greater
@@ -825,6 +828,7 @@ investigacion->investigation
 invoves->involves
 invovles->involves
 ipmort->import
+iput->input
 irelevant->relevant, irrelevant
 irrefuable->irrefutable
 isaligned->misaligned
@@ -992,6 +996,7 @@ omething->something
 omponent->component
 omputer->computer
 onec->once
+onempty->nonempty
 onsequently->consequently
 ontent->content
 onth->month
@@ -1073,6 +1078,7 @@ perating->operating
 percetage->percentage
 percieves->perceives
 perferred->preferred
+perfoms->performs
 performace->performance
 perfrom->perform
 peristence->persistence
@@ -1241,6 +1247,7 @@ restrcted->restricted
 restrction->restriction
 resued->rescued, reused
 resutls->results
+resut->result
 retreived->retrieved
 retreiving->retrieving
 retrived->retrieved
