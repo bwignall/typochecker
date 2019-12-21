@@ -177,6 +177,7 @@ betweeen->between
 bidrectional->bidirectional
 biggr->bigger
 bild->build
+binares->binaries
 bindig->binding
 bindign->binding
 bining->binding
@@ -251,6 +252,7 @@ chld->child
 chosing->choosing
 chun->churn, chunk
 cience->science
+clared->cleared
 clase->clause
 clases->classes, clashes, clauses
 classc->classic
@@ -506,6 +508,7 @@ econd->second
 econds->seconds
 ecreate->recreate
 edar->dear
+editr->editor
 edns->ends
 efault->default
 eference->reference
@@ -579,6 +582,7 @@ evalution->evolution, evaluation
 everythig->everything
 everythng->everything
 eveything->everything
+eview->review
 evision->envision, revision
 evnt->event
 exahustive->exhaustive
@@ -607,6 +611,7 @@ expantions->expansions
 expasion->expansion
 expecs->expects
 expecte->expected
+expens->expense
 experiances->experiences
 explciitly->explicitly
 explcit->explicit
@@ -616,6 +621,7 @@ explicily->explicitly
 explicity->explicit, explicitly
 explict->explicit
 explictly->explicitly
+expres->expires, express
 expresion->expression
 expresions->expressions
 expressoins->expressions
@@ -626,6 +632,7 @@ exta->extra
 extema->extrema
 exteme->extreme
 extende->extended
+exten->extend, extent
 extr->extra
 faild->failed
 failues->failures
@@ -642,6 +649,7 @@ ffer->offer
 fficient->efficient
 filld->filled
 fillin->fill in, filling
+financ->finance
 finit->finite
 fisrt->first
 fittng->fitting
@@ -677,6 +685,7 @@ frst->first
 funciton->function
 funcitons->functions
 functin->function
+functiona->functional
 functionailty->functionality
 functionlity->functionality
 fundamenta->fundamental
@@ -744,6 +753,7 @@ imlicit->implicit
 immedately->immediately
 immitates->imitates
 imoprts->imports
+implcit->implicit
 implemenation->implementation
 implemening->implementing
 implementaion->implementation
@@ -810,6 +820,7 @@ inlne->inline
 inlude->include
 inocuous->innocuous
 inptus->inputs
+insall->install
 insantiates->instantiates
 insenstive->insensitive
 insolube->insoluble
@@ -906,6 +917,7 @@ lenth->tenth, lents, length, lent
 lesat->least
 lettuc->lettuce
 lfited->lifted
+liabilit->liability
 libaries->libraries
 librarie->libraries
 libray->library
@@ -1096,6 +1108,7 @@ oututs->outputs
 oveflow->overflow
 overfow->overflow
 overide->override
+overides->overrides
 overriden->overridden
 overrie->override
 overwiting->overwriting
@@ -1123,6 +1136,7 @@ patc->patch
 patform->platform
 pathc->patch
 pathed->patched
+paymnts->payments
 pecification->specification
 peforms->performs
 perating->operating
@@ -1235,6 +1249,7 @@ rati->ratio
 rcall->recall
 rdinary->ordinary
 reaso->reason
+receiv->receive
 recevied->received
 recides->resides
 recip->recipe
@@ -1285,6 +1300,7 @@ repesentation->representation
 repesented->represented
 replca->replica
 replcia->replica
+repored->reported
 representin->representing
 represetnation->representation
 reprseents->represents
@@ -1334,11 +1350,13 @@ roote->root, rooted, roots
 rouding->rounding
 roud->proud, round
 rovide->provide
+rrun->rerun
 rshape->reshape
 rturns->returns
 runime->runtime
 runnbale->runnable
 rvert->revert
+rview->review
 sampl->sample
 sandwch->sandwich
 santy->sanity
@@ -1436,6 +1454,7 @@ spliting->splitting
 spurios->spurious
 spurous->spurious
 squence->sequence
+srictly->strictly
 stac->stack
 staic->static
 standalon->standalone
@@ -1538,7 +1557,9 @@ throuh->through
 thum->thumb
 thurst->thrust
 thusday->thursday
+tial->tail, trial
 timout->timeout
+tiple->triple
 toal->total
 toastd->toasted
 toch->touch
@@ -1649,6 +1670,7 @@ vetorization->vectorization
 visibilty->visibility
 visibliities->visibilities
 visiblity->visibility
+visi->visit
 vist->visit
 vokswagen->volkswagen
 vreify->verify
@@ -1672,6 +1694,7 @@ wraper->wrapper
 wrld->world
 wrtie->write
 wtihout->without
+xact->exact
 xecutable->executable
 xford->oxford
 xpected->expected
