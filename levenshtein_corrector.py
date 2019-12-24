@@ -32,8 +32,8 @@ def correction(word):
 def candidates(word):
     """Generate possible spelling corrections for word."""
     # Unlike Norvig's solution, does *NOT* consider distance-2 edits
-    # return (known([word]) or known(edits1(word)) or known(edits2(word)) or [word])
-    return known([word]) or known(edits1(word)) or [word]
+    return (known([word]) or known(edits1(word)) or known(edits2(word)) or [word])
+    # return known([word]) or known(edits1(word)) or [word]
 
 
 def known(words):
@@ -51,6 +51,7 @@ def edits1(word):
     inserts = [L + c + R for L, R in splits for c in letters]
     # return set(deletes + transposes + replaces + inserts)
     # return set(transposes + replaces)
+    # return set(transposes + inserts + deletes)
     return set(transposes + inserts)
     # return set(transposes)
 
@@ -113,6 +114,10 @@ def get_known_words(loc='/usr/share/dict/american-english'):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('dir', help='Search this directory, recursively, to find files to check')
+    parser.add_argument('--ignore-prepends', action='store_true',
+                        help='If set, ignore suggestions where characters are only added to the front')
+    parser.add_argument('--ignore-appends', action='store_true',
+                        help='If set, ignore suggestions where characters are only added to the end')
 
     args = parser.parse_args()
 
@@ -193,14 +198,23 @@ if __name__ == '__main__':
         if len(sorted_word) > 20:
             continue
 
+        # Idea: commonly used words aren't typos
+        if word_counter[sorted_word] > 5:
+            continue
+
         cs = candidates(sorted_word)
         if cs and len(cs) < 5 and sorted_word not in cs:
-            # Idea: commonly used words aren't typos
-            if word_counter[sorted_word] > 5:
-                continue
+            if args.ignore_prepends:
+                if cs.endswith(sorted_word):
+                    continue
+
+            if args.ignore_appends:
+                if cs.startswith(sorted_word):
+                    continue
             
             # Idea: the typo is made less frequently than the correct spelling
-            in_text = [w for w in cs if w in word_counter and word_counter[w] > word_counter[sorted_word] and word_counter[w] > 5]
+            in_text = [w for w in cs
+                       if w in word_counter and word_counter[w] > word_counter[sorted_word] and word_counter[w] > 5]
 
             if not in_text:
                 continue
@@ -218,4 +232,3 @@ if __name__ == '__main__':
             found_new_typos.append(res)
 
     open('data/levenshtein_util_typos.txt', 'w').write('\n'.join(['{}->{}'.format(x, y) for (x, y) in found_new_typos]))
-     
