@@ -28,6 +28,7 @@ acutally->actually
 adated->adapted
 addiional->additional
 addresss->address, addresses
+adjuncion->adjunction
 adpater->adapter
 adresd->address, addressed
 afer->safer, after
@@ -81,6 +82,7 @@ appliation->application
 appliction->application
 appoach->approach
 appplication->application
+appreas->appears
 approoximately->approximately
 approprate->appropriate
 approriate->appropriate
@@ -252,6 +254,7 @@ coalecing->coalescing
 coalese->coalesce
 coefficeint->coefficient
 coefficents->coefficients
+coeffient->coefficient
 coeficient->coefficient
 cofficient->coefficient
 collec->collect
@@ -273,6 +276,7 @@ comparion->comparison
 compatbile->compatible
 compatibiity->compatibility
 compatibilty->compatibility
+compatibity->compatibility
 compatibliity->compatibility
 compication->complication
 compier->compiler
@@ -283,6 +287,7 @@ compre->compare
 comprehesion->comprehension
 compuation->computation
 comput->compute
+compution->computation
 computs->computes
 comute->commute, compute, comte
 conceptully->conceptually
@@ -516,6 +521,7 @@ entier->entire
 entites->entities
 epartment->department
 ependent->dependent
+epilson->epsilon
 epislon->epsilon
 eprecated->deprecated
 epsion->epsilon, epson
@@ -703,6 +709,7 @@ implemening->implementing
 implementaion->implementation
 implementaiton->implementation
 implementd->implemented, implement, implements
+implementions->implementations
 implemetation->implementation
 implemneted->implemented
 impliation->implication
@@ -720,6 +727,7 @@ incluidng->including
 incorprated->incorporated
 inctroduces->introduces
 indepedent->independent
+independely->independently
 independendly->independently
 indexd->indexed
 indexin->indexing
@@ -742,6 +750,7 @@ infrastructre->infrastructure
 infx->infix
 ingore->ignore
 ininite->infinite
+initailzed->initialized
 initalisation->initialisation
 initalization->initialization
 initalized->initialized
@@ -831,6 +840,7 @@ ixed->fixed, mixed
 keyord->keyword
 knonw->known
 kutosis->kurtosis
+labeleld->labelled
 lables->labels
 lael->label
 lamda->lambda
@@ -849,6 +859,7 @@ lenths->lengths
 lenth->tenth, lents, length, lent
 lesat->least
 lettuc->lettuce
+lexicographicaly->lexicographically
 lfited->lifted
 libaries->libraries
 librarie->libraries
@@ -955,6 +966,7 @@ notd->noted
 nothin->nothing
 noticable->noticeable
 nozero->nonzero
+nrealy->nearly
 nsorted->unsorted
 nstruction->instruction
 nteract->interact
@@ -1078,6 +1090,7 @@ poiners->pointers
 poins->points
 poission->poisson
 poitners->pointers
+polcies->policies, polices
 pollin->pollen, polling
 polymophic->polymorphic
 polymoprhic->polymorphic
@@ -1120,6 +1133,7 @@ primtive->primitive
 primtives->primitives
 prmitive->primitive
 prmpt->prompt
+probabilies->probabilities
 probabilties->probabilities
 probabilty->probability
 probablility->probability
@@ -1154,6 +1168,7 @@ quicky->quickly
 quic->quick
 quntic->quintic
 rabit->rabbit
+raph->graph
 rcall->recall
 rdinary->ordinary
 reaso->reason
@@ -1205,6 +1220,7 @@ repesentation->representation
 replca->replica
 replcia->replica
 representin->representing
+represention->representation
 represetnation->representation
 reprseents->represents
 reprsents->represents
@@ -1246,6 +1262,7 @@ rnames->renames
 rnge->range
 roblem->problem
 rogrammer->programmer
+rogrammers->programmers
 rogramming->programming
 roote->root, rooted, roots
 rouding->rounding
@@ -1474,6 +1491,7 @@ transformtion->transformation
 transfrom->transform
 transitionned->transitioned
 transose->transpose
+treates->treats
 trep->strep
 triger->trigger
 trigomometric->trigonometric
@@ -1491,6 +1509,7 @@ tupels->tuples
 ture->true
 tyep->type
 tyle->style
+typtes->types
 uable->usable, unable
 ubound->upbound, unbound
 uconstrained->unconstrained
