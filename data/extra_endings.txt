@@ -150,6 +150,7 @@ assocated->associated
 associatd->associated
 assuing->assuming
 assum->assume
+asychronous->asynchronous
 asymetrical->asymmetrical
 atached->attached
 atest->latest
@@ -535,6 +536,7 @@ dosen->doesn
 dosn->doesn
 doubl->double, doubly, doubt
 dowloaded->downloaded
+dowstream->downstream
 dpth->depth
 droped->dropped
 dscriptor->descriptor
@@ -1431,6 +1433,7 @@ requries->requires
 requsted->requested
 resepct->respect
 resonable->reasonable
+resouce->resource
 responsibilty->responsibility
 resposibility->responsibility
 ressembles->resembles
@@ -1476,6 +1479,7 @@ rovide->provide
 rrun->rerun
 rshape->reshape
 rturns->returns
+runable->runnable
 runime->runtime
 runnbale->runnable
 rvert->revert
@@ -1558,6 +1562,7 @@ skiped->skipped
 sligtly->slightly
 smat->smart
 smll->small
+snaphot->snapshot
 snaphots->snapshots
 snipets->snippets
 soely->solely
@@ -1716,6 +1721,7 @@ traceble->traceable
 traiend->trained
 trainig->training
 trak->track
+trampline->trampoline
 tranformations->transformations
 tranformation->transformation
 tranforms->transforms
@@ -1793,6 +1799,7 @@ unsatifiable->unsatisfiable
 unserstand->understand
 unsiged->unsigned
 unspported->unsupported
+unsubcribe->unsubscribe
 unsuppoted->unsupported
 unsupproted->unsupported
 unversally->universally
