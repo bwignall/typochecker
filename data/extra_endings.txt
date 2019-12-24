@@ -208,6 +208,7 @@ blha->blah
 boostrap->bootstrap
 bootstap->bootstrap
 bost->boost
+botom->bottom
 boudary->boundary
 boudn->bound
 boudns->bounds
@@ -841,6 +842,7 @@ inagine->imagine
 inceased->increased, incensed
 inclding->including
 incluidng->including
+incorectly->incorrectly
 incorprated->incorporated
 inctroduces->introduces
 indepedent->independent
@@ -1060,6 +1062,7 @@ mismacth->mismatch
 mitake->mistake
 mixtur->mixture
 modifed->modified
+modifiablity->modifiability
 modifing->modifying
 modles->models
 modl->model
@@ -1483,6 +1486,7 @@ santy->sanity
 sapce->space
 satble->stable
 satifiable->satisfiable
+satified->satisfied
 satsifying->satisfying
 satte->state
 scalas->scalars
@@ -1510,6 +1514,7 @@ serailized->serialized
 serializtion->serialization
 serialzing->serializing
 serie->series
+setable->settable
 settins->settings
 sfot->soft
 shaza->shazam
@@ -1747,11 +1752,13 @@ tsem->stem
 tsub->stub
 tupels->tuples
 ture->true
+txet->text
 tyep->type
 tyle->style
 typtes->types
 uable->usable, unable
 ublic->public
+ublk->bulk
 ubound->upbound, unbound
 uconstrained->unconstrained
 uderlying->underlying
@@ -1767,6 +1774,7 @@ underyling->underlying
 unerflow->underflow
 uness->unless
 unexpeced->unexpected
+unexpeted->unexpected
 unfiy->unify
 unfortuantely->unfortunately
 unfortuately->unfortunately
@@ -1806,6 +1814,7 @@ variale->variable
 variatons->variations
 varible->variable
 varint->variant
+varius->various
 vaule->value
 vecto->vector
 verifed->verified
