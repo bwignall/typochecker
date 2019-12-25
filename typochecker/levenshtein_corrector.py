@@ -4,93 +4,12 @@
 
 import argparse
 import os
-import re
 from collections import Counter
+
+from utils import candidates, get_visible_subdirs, get_words_in_file, get_default_typos
 
 # Assumption: long lines (e.g., in JSON files) should be skipped
 MAX_LINE_LEN = 200
-
-
-# <Norvig>
-def words(text): return re.findall(r'\w+', text.lower())
-
-
-WORDS = Counter(words(open('/usr/share/dict/american-english-huge').read()))
-WORDS.update(words(open('/usr/share/dict/british-english-huge').read()))
-
-
-def P(word, N=sum(WORDS.values())):
-    """Probability of `word`."""
-    return WORDS[word] / N
-
-
-def correction(word):
-    """Most probable spelling correction for word."""
-    return max(candidates(word), key=P)
-
-
-def candidates(word):
-    """Generate possible spelling corrections for word."""
-    # Unlike Norvig's solution, does *NOT* consider distance-2 edits
-    return known([word]) or known(edits1(word)) or known(edits2(word)) or [word]
-    # return known([word]) or known(edits1(word)) or [word]
-
-
-def known(words):
-    """The subset of `words` that appear in the dictionary of WORDS."""
-    return set(w for w in words if w in WORDS)
-
-
-def edits1(word):
-    """All edits that are one edit away from `word`."""
-    letters = 'abcdefghijklmnopqrstuvwxyz'
-    splits = [(word[:i], word[i:]) for i in range(len(word) + 1)]
-    deletes = [L + R[1:] for L, R in splits if R]
-    transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R) > 1]
-    replaces = [L + c + R[1:] for L, R in splits if R for c in letters]
-    inserts = [L + c + R for L, R in splits for c in letters]
-    # return set(deletes + transposes + replaces + inserts)
-    # return set(transposes + replaces)
-    # return set(transposes + inserts + deletes)
-    return set(transposes + inserts)
-    # return set(transposes)
-
-
-def edits2(word):
-    """All edits that are two edits away from `word`."""
-    return (e2 for e1 in edits1(word) for e2 in edits1(e1))
-
-
-# </Norvig>
-
-def get_words_in_string(s):
-    words = re.findall(r'[\w]+', s)
-
-    return words
-
-
-def get_words_in_file(f):
-    with open(f, 'r') as ff:
-        lines = ff.readlines()
-
-    # Ignore lines that have email addresses
-    lines = [line.strip().replace('\\n', '') for line in lines if '@' not in line]
-
-    return get_words_in_string(' '.join(lines))
-
-
-def get_typos(loc):
-    print('opening {}'.format(loc))
-    with open(loc, 'r') as fname:
-        ls = fname.readlines()
-
-    d = {}
-
-    for line in ls:
-        k, v = line.strip().split('->')
-        d.update({k: v})
-
-    return d
 
 
 def is_new_typo(suspected_typo):
@@ -121,28 +40,9 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    # By default, use typos gathered at
-    # https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines
-    TYPOS_LOC = os.path.join(os.path.dirname(__file__),
-                             os.pardir, 'data', 'wikipedia_common_misspellings.txt')
-    EXTRA_TYPOS_LOC = os.path.join(os.path.dirname(__file__),
-                                   os.pardir, 'data', 'extra_endings.txt')
+    typos = get_default_typos()
 
-    typos = get_typos(TYPOS_LOC)
-    extra_typos = get_typos(EXTRA_TYPOS_LOC)
-
-    typos = {**typos, **extra_typos}
-
-    all_files = []
-    for root, dirs, files in os.walk(args.dir):
-        if any([d.startswith('.') for d in root.split(os.sep)
-                if d != '.']):
-            # Ignore hidden directories
-            # (which are assumed to start with '.')
-            continue
-        else:
-            all_files.extend([os.path.join(root, filename)
-                              for filename in files])
+    all_files = get_visible_subdirs(args.dir)
 
     file_beginnings_to_ignore = ['LICENSE', 'Makefile', 'TypoMakefile']
     file_endings_to_ignore = ['~', '.exe',
@@ -190,7 +90,7 @@ if __name__ == '__main__':
     sorted_words = sorted(list(set(sorted_words)))
 
     print('Gathering candidates')
-    
+
     typo_candidates = []
 
     for sorted_word in sorted_words:
@@ -216,13 +116,13 @@ if __name__ == '__main__':
 
             if not in_text:
                 continue
-            
+
             cnts = [(w, word_counter[w], word_counter[sorted_word]) for w in in_text]
             print('typo candidate: {}->{}'.format(sorted_word, ['{}'.format(x) for x in cnts]))
             typo_candidates.append((sorted_word, ', '.join(in_text)))
 
     print('Found {} typo candidates'.format(len(typo_candidates)))
-    
+
     found_new_typos = []
     for typo_candidate in typo_candidates:
         res = is_new_typo(typo_candidate)
