@@ -203,15 +203,14 @@ if __name__ == '__main__':
             continue
 
         cs = candidates(sorted_word)
-        if cs and len(cs) < 5 and sorted_word not in cs:
-            if args.ignore_prepends:
-                if cs.endswith(sorted_word):
-                    continue
 
-            if args.ignore_appends:
-                if cs.startswith(sorted_word):
-                    continue
-            
+        if args.ignore_prepends:
+            cs = [c for c in cs if not c.endswith(sorted_word)]
+
+        if args.ignore_appends:
+            cs = [c for c in cs if not c.startswith(sorted_word)]
+
+        if cs and len(cs) < 5 and sorted_word not in cs:
             # Idea: the typo is made less frequently than the correct spelling
             in_text = [w for w in cs
                        if w in word_counter and word_counter[w] > word_counter[sorted_word] and word_counter[w] > 5]
