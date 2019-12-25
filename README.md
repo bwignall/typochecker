@@ -19,7 +19,7 @@ This will traverse `BASE_DIRECTORY` and its subdirectories.
 make -f path/to/typochecker/Makefile
 ```
 
-Example (explicit): `cd path/to/my/folder ; git ls-files | python path/to/my/git/src/corrector.py`
+Example (explicit): `cd path/to/my/folder ; git ls-files | python path/to/my/git/src/typochecker/corrector.py`
 
 For either method, this will iterate through the files found, cross-reference the 
 list of likely typos, and prompt the user for how they would like to handle

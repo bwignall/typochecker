@@ -119,9 +119,9 @@ if __name__ == '__main__':
     # By default, use typos gathered at
     # https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines
     TYPOS_LOC = os.path.join(os.path.dirname(__file__),
-                             'data', 'wikipedia_common_misspellings.txt')
+                             os.pardir, 'data', 'wikipedia_common_misspellings.txt')
     EXTRA_TYPOS_LOC = os.path.join(os.path.dirname(__file__),
-                                   'data', 'extra_endings.txt')
+                                   os.pardir, 'data', 'extra_endings.txt')
 
     typos = get_typos(TYPOS_LOC)
     extra_typos = get_typos(EXTRA_TYPOS_LOC)
@@ -217,5 +217,5 @@ if __name__ == '__main__':
         if res is not None:
             found_new_typos.append(res)
 
-    open('data/levenshtein_util_typos.txt', 'w').write('\n'.join(['{}->{}'.format(x, y) for (x, y) in found_new_typos]))
+    open('../data/levenshtein_util_typos.txt', 'w').write('\n'.join(['{}->{}'.format(x, y) for (x, y) in found_new_typos]))
      

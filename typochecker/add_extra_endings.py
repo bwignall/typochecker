@@ -74,7 +74,7 @@ if __name__ == '__main__':
     # By default, use typos gathered at
     # https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines
     TYPOS_LOC = os.path.join(os.path.dirname(__file__),
-                             'data', 'wikipedia_common_misspellings.txt')
+                             os.pardir, 'data', 'wikipedia_common_misspellings.txt')
 
     typos = get_typos(TYPOS_LOC)
 
@@ -82,6 +82,6 @@ if __name__ == '__main__':
     added_s = get_addition(typos, 'd', 's')
 
     with open(os.path.join(os.path.dirname(__file__),
-                           'data', 'extra_endings.txt'), 'w') as f:
+                           os.pardir, 'data', 'extra_endings.txt'), 'w') as f:
         txt = '\n'.join(['{}->{}'.format(k, v) for k, v in {**added_d, **added_s}.items()])
         f.writelines(txt)

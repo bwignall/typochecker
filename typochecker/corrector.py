@@ -155,9 +155,9 @@ if __name__ == '__main__':
     # By default, use typos gathered at
     # https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines
     TYPOS_LOC = os.path.join(os.path.dirname(__file__),
-                             'data', 'wikipedia_common_misspellings.txt')
+                             os.pardir, 'data', 'wikipedia_common_misspellings.txt')
     EXTRA_TYPOS_LOC = os.path.join(os.path.dirname(__file__),
-                                   'data', 'extra_endings.txt')
+                                   os.pardir, 'data', 'extra_endings.txt')
 
     print('Getting list of typos')
     typo_src = 'https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines'
