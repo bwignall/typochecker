@@ -421,6 +421,7 @@ curren->current
 currenty->currently
 currid->curried
 currrent->current
+curtosis->kurtosis
 cutof->cutoff
 dagnostic->diagnostic
 datast->dataset
@@ -458,6 +459,7 @@ delarations->declarations
 delcaration->declaration
 delet->delete
 delivere->deliver, delivered
+demoninator->denominator
 dentity->identity
 dependecy->dependency
 dependenceis->dependencies
@@ -625,6 +627,7 @@ evaluted->evaluated
 evalute->evaluate
 evalutes->evaluates
 evalution->evolution, evaluation
+evalualution->evaluation
 everyhwere->everywhere
 everythig->everything
 everythng->everything
@@ -1875,3 +1878,9 @@ ystem->system
 ython->python
 yung->young
 zeroe->zeroed, zeroes
+mathematmal->mathematical
+maximimum->maximum
+sofisticated->sophisticated
+trigomonetric->trigonometric
+unfortunatately->unfortunately
+uninitializated->uninitialized

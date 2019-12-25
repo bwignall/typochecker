@@ -4,22 +4,10 @@ import os
 import re
 import sys
 
+from utils import parse_typos_file, get_visible_subdirs
+
 # Assumption: long lines (e.g., in JSON files) should be skipped
 MAX_LINE_LEN = 200
-
-
-def get_typos(loc):
-    print('opening {}'.format(loc))
-    with open(loc, 'r') as f:
-        ls = f.readlines()
-
-    d = {}
-
-    for line in ls:
-        k, v = line.strip().split('->')
-        d.update({k: v})
-
-    return d
 
 
 def get_typos_in_string(s, known_typos):
@@ -141,30 +129,21 @@ if __name__ == '__main__':
     if not args.dir:
         all_files = [f.strip() for f in fileinput.input()]
     else:
-        all_files = []
-        for root, dirs, files in os.walk(args.dir):
-            if any([d.startswith('.') for d in root.split(os.sep)
-                    if d != '.']):
-                # Ignore hidden directories
-                # (which are assumed to start with '.')
-                continue
-            else:
-                all_files.extend([os.path.join(root, filename)
-                                  for filename in files])
+        all_files = get_visible_subdirs(args.dir)
 
     # By default, use typos gathered at
     # https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines
     TYPOS_LOC = os.path.join(os.path.dirname(__file__),
-                             'data', 'wikipedia_common_misspellings.txt')
+                             os.pardir, 'data', 'wikipedia_common_misspellings.txt')
     EXTRA_TYPOS_LOC = os.path.join(os.path.dirname(__file__),
-                                   'data', 'extra_endings.txt')
+                                   os.pardir, 'data', 'extra_endings.txt')
 
     print('Getting list of typos')
     typo_src = 'https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines'
     print('Information from {}'.format(typo_src))
     typos = {}
     for fs in [TYPOS_LOC, EXTRA_TYPOS_LOC]:
-        typos.update(get_typos(fs))
+        typos.update(parse_typos_file(fs))
 
     # Remove whitelisted words from typos
 

@@ -2,27 +2,15 @@ import argparse
 import os
 import sys
 
+from utils import parse_typos_file
+
 # Assumption: long lines (e.g., in JSON files) should be skipped
 MAX_LINE_LEN = 200
 
 
-def get_typos(loc):
-    print('opening {}'.format(loc))
-    with open(loc, 'r') as fname:
-        ls = fname.readlines()
-
-    d = {}
-
-    for line in ls:
-        k, v = line.strip().split('->')
-        d.update({k: v})
-
-    return d
-
-
 def get_addition(all_typos, known_ending, unknown_ending):
     new_defns = {}
-    
+
     for k, v in all_typos.items():
         kk, ku = k + known_ending, k + unknown_ending
         if (kk in all_typos) and (ku not in all_typos):
@@ -74,14 +62,14 @@ if __name__ == '__main__':
     # By default, use typos gathered at
     # https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines
     TYPOS_LOC = os.path.join(os.path.dirname(__file__),
-                             'data', 'wikipedia_common_misspellings.txt')
+                             os.pardir, 'data', 'wikipedia_common_misspellings.txt')
 
-    typos = get_typos(TYPOS_LOC)
+    typos = parse_typos_file(TYPOS_LOC)
 
     added_d = get_addition(typos, 's', 'd')
     added_s = get_addition(typos, 'd', 's')
 
     with open(os.path.join(os.path.dirname(__file__),
-                           'data', 'extra_endings.txt'), 'w') as f:
+                           os.pardir, 'data', 'extra_endings.txt'), 'w') as f:
         txt = '\n'.join(['{}->{}'.format(k, v) for k, v in {**added_d, **added_s}.items()])
         f.writelines(txt)
