@@ -69,7 +69,7 @@ def get_words_in_file(f):
         lines = ff.readlines()
 
     # Ignore lines that have email addresses
-    lines = [l.strip().replace('\\n', '') for l in lines if '@' not in l]
+    lines = [line.strip().replace('\\n', '') for line in lines if '@' not in line]
 
     return get_words_in_string(' '.join(lines))
 

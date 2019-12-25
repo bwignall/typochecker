@@ -32,7 +32,7 @@ def correction(word):
 def candidates(word):
     """Generate possible spelling corrections for word."""
     # Unlike Norvig's solution, does *NOT* consider distance-2 edits
-    return (known([word]) or known(edits1(word)) or known(edits2(word)) or [word])
+    return known([word]) or known(edits1(word)) or known(edits2(word)) or [word]
     # return known([word]) or known(edits1(word)) or [word]
 
 
@@ -74,7 +74,7 @@ def get_words_in_file(f):
         lines = ff.readlines()
 
     # Ignore lines that have email addresses
-    lines = [l.strip().replace('\\n', '') for l in lines if '@' not in l]
+    lines = [line.strip().replace('\\n', '') for line in lines if '@' not in line]
 
     return get_words_in_string(' '.join(lines))
 
@@ -193,7 +193,6 @@ if __name__ == '__main__':
     
     typo_candidates = []
 
-    
     for sorted_word in sorted_words:
         if len(sorted_word) > 20:
             continue
@@ -230,4 +229,5 @@ if __name__ == '__main__':
         if res is not None:
             found_new_typos.append(res)
 
-    open('../data/levenshtein_util_typos.txt', 'w').write('\n'.join(['{}->{}'.format(x, y) for (x, y) in found_new_typos]))
+    open('data/levenshtein_util_typos.txt', 'w').write('\n'.join(['{}->{}'.format(x, y)
+                                                                  for (x, y) in found_new_typos]))
