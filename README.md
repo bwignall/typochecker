@@ -71,5 +71,5 @@ entering `doesn't` would result in `doesn't't` in the resulting text).
 # Source of likely typos
 
 The tool uses information from 
-[https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines](Wikipedia)
+[Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines)
 as a source of useful typos to check for. Note that some typos (e.g., "wich") contain multiple potential corrections.
