@@ -77,7 +77,7 @@ def iterate_over_file(f, all_typos, found_typos):
 
     all_lines = []
 
-    re_pat = re.compile(r'\W' + '|'.join(found_typos) + r'\W')
+    re_pat = re.compile('|'.join(r'\W' + found_typo + r'\W' for found_typo in found_typos))
 
     with open(f, 'r') as fname:
         raw_lines = fname.readlines()
