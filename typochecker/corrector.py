@@ -91,7 +91,7 @@ def iterate_over_file(f, all_typos, found_typos):
             matched_typo = re.sub('[^a-zA-Z]+', '', m.group())
 
             fix = get_fix(line, m.span(),
-                          all_typos[matched_typo], matched_typo)
+                          all_typos.get(matched_typo, None) or all_typos[matched_typo.lower()], matched_typo)
 
             if fix == matched_typo:
                 # If skip the fix, assume rest of line is acceptable
@@ -190,4 +190,10 @@ if __name__ == '__main__':
                 iterate_over_file(search_file, typos, file_typos)
 
         except OSError:
+            pass
+
+        except UnicodeDecodeError:
+            print('### Experienced an error with file {}'.format(search_file))
+
+        except EOFError:
             pass
