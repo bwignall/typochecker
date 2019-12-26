@@ -93,6 +93,7 @@ apar->apart
 apears->appears
 appl->apply, apple
 appliation->application
+applicaitve->applicative
 applicatve->applicative
 appliction->application
 appoach->approach
@@ -226,6 +227,7 @@ buider->builder
 builing->building
 buit->built
 bulding->building
+bulid->build
 byond->beyond
 byts->bytes
 cach->cache, catch
@@ -622,12 +624,12 @@ etxt->text
 euclidian->euclidean
 euqal->equal
 evalated->evaluated
+evalualution->evaluation
 evalutations->evaluations
 evaluted->evaluated
 evalute->evaluate
 evalutes->evaluates
 evalution->evolution, evaluation
-evalualution->evaluation
 everyhwere->everywhere
 everythig->everything
 everythng->everything
@@ -1041,13 +1043,18 @@ matchd->matched
 matc->match
 materialzation->materialization
 mathematica->mathematical
+mathematmal->mathematical
 mathemetical->mathematical
 mattr->matter
+maximimum->maximum
 maye->maybe
 measurments->measurements
 measurs->measures
 meatdata->metadata
 meetpu->meetup
+megaparec->megaparsec
+megapasec->megaparsec
+megaprasec->megaparsec
 mehtod->method
 mesage->message
 mesasge->message
@@ -1557,6 +1564,7 @@ simplfy->simplify
 simplifing->simplifying
 simpl->simple, simply
 simpy->simply
+singals->signals
 singature->signature
 sitch->switch
 sitll->still
@@ -1569,6 +1577,7 @@ snaphot->snapshot
 snaphots->snapshots
 snipets->snippets
 soely->solely
+sofisticated->sophisticated
 somehere->somewhere
 somethign->something
 someting->something
@@ -1748,6 +1757,7 @@ trep->strep
 trianglar->triangular
 triger->trigger
 trigomometric->trigonometric
+trigomonetric->trigonometric
 trigonmetric->trigonometric
 trinagular->triangular
 trival->trivial
@@ -1787,10 +1797,12 @@ unexpeted->unexpected
 unfiy->unify
 unfortuantely->unfortunately
 unfortuately->unfortunately
+unfortunatately->unfortunately
 unforunately->unfortunately
 unifed->unified
 unificaion->unification
 unificaiton->unification
+uninitializated->uninitialized
 uninitilized->uninitialized
 uniqu->unique
 universit->university
@@ -1878,9 +1890,3 @@ ystem->system
 ython->python
 yung->young
 zeroe->zeroed, zeroes
-mathematmal->mathematical
-maximimum->maximum
-sofisticated->sophisticated
-trigomonetric->trigonometric
-unfortunatately->unfortunately
-uninitializated->uninitialized
