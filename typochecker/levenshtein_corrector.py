@@ -112,7 +112,7 @@ if __name__ == '__main__':
         if cs and len(cs) < 5 and sorted_word not in cs:
             # Idea: the typo is made less frequently than the correct spelling
             in_text = [w for w in cs
-                       if w in word_counter and word_counter[w] > word_counter[sorted_word] and word_counter[w] > 5]
+                       if w in word_counter and word_counter[w] > word_counter[sorted_word] and word_counter[w] > 10]
 
             if not in_text:
                 continue
