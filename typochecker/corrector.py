@@ -105,7 +105,7 @@ def iterate_over_file(f, all_typos, found_typos):
                           line,
                           count=1)
 
-            print('After: {}'.format(line))
+            print('After:  {}'.format(line))
             m = re_pat.search(line)
 
         all_lines.append(line)
