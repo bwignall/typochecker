@@ -21,7 +21,7 @@ def get_typos_in_string(s, known_typos):
     words = re.findall(r'[\w]+', s)
     uniq_words = set(words)
 
-    return sorted([w for w in uniq_words if w in known_typos])
+    return sorted([w for w in uniq_words if w.lower() in known_typos])
 
 
 def get_typos_in_file(f, known_typos):
@@ -88,7 +88,7 @@ def iterate_over_file(f, all_typos, found_typos):
         m = re_pat.search(line)
 
         while m and (len(line) < MAX_LINE_LEN):
-            matched_typo = m.group()[1:-1]
+            matched_typo = re.sub('[^a-zA-Z]+', '', m.group())
 
             fix = get_fix(line, m.span(),
                           all_typos[matched_typo], matched_typo)
@@ -170,6 +170,8 @@ if __name__ == '__main__':
     file_beginnings_to_ignore = ['LICENSE']
     file_endings_to_ignore = ['~', '.exe', '.gz', '.jar', '.pdf', '.xml', '.zip']
 
+    print('Will search through {} files'.format(len(all_files)))
+
     for search_file in all_files:
         if any([search_file.endswith(e) for e in file_endings_to_ignore]):
             continue
@@ -179,11 +181,12 @@ if __name__ == '__main__':
             continue
 
         try:
+            # print('Searching file: {}'.format(search_file))
             file_typos = get_typos_in_file(search_file, typos)
 
             if file_typos:
-                # print('file_typos: {}'.format(file_typos))
                 print('Suggestions follow for file {}'.format(search_file))
+                print('file_typos: {}'.format(file_typos))
                 iterate_over_file(search_file, typos, file_typos)
 
         except:
