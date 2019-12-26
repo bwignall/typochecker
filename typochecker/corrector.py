@@ -155,13 +155,13 @@ if __name__ == '__main__':
             with open(whitelist_file, 'r') as ff:
                 lines = ff.readlines()
 
-            words = re.findall(r'[\w]+', ' '.join(lines))
-
-            for word in words:
-                del typos[word.lower()]
-
-        except:
+        except OSError:
             print('Encountered problem while trying to trying to read whitelist file {}'.format(whitelist_file))
+
+        words = re.findall(r'[\w]+', ' '.join(lines))
+
+        for word in words:
+            del typos[word.lower()]
 
     # Remove some case sensitivity
     titled_typos = {k.title(): v.title() for k, v in typos.items()}
@@ -189,5 +189,5 @@ if __name__ == '__main__':
                 print('file_typos: {}'.format(file_typos))
                 iterate_over_file(search_file, typos, file_typos)
 
-        except:
+        except OSError:
             pass
