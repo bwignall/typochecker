@@ -24,7 +24,7 @@ def get_addition(all_typos, known_ending, unknown_ending):
             try:
                 response_raw = input(('Correction ("!h" for help), default to {}: '
                                       ).format(suggestion))
-            except:
+            except KeyboardInterrupt:
                 continue
 
             response = response_raw.strip()

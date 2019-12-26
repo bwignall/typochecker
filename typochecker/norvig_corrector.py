@@ -22,7 +22,7 @@ def is_new_typo(suspected_typo):
             return typo, response_raw
         else:
             return None
-    except:
+    except KeyboardInterrupt:
         return None
 
 
@@ -81,7 +81,7 @@ if __name__ == '__main__':
             word_counter.update(file_words)
 
             added_words.extend(file_words)
-        except:
+        except OSError:
             pass
 
     print('Done searching files')
