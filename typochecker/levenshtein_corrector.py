@@ -76,6 +76,8 @@ if __name__ == '__main__':
 
         except OSError:
             pass
+        except UnicodeDecodeError:
+            pass
 
     print('Done searching files')
     sorted_words = list(word_counter.items())
