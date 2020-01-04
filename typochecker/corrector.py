@@ -2,9 +2,9 @@ import argparse
 import fileinput
 import os
 import re
-import sys
 
-from utils import parse_typos_file, get_visible_subdirs
+from typochecker.user_input import UserInput, Ignore, Keep, Literal, Quit
+from typochecker.utils import parse_typos_file, get_visible_subdirs
 
 # Assumption: long lines (e.g., in JSON files) should be skipped
 MAX_LINE_LEN = 200
@@ -45,31 +45,32 @@ def get_fix(line, typo_span, suggestion, orig):
     response_raw = input(('Correction ("!h" for help), default to {}: '
                           ).format(suggestion))
 
-    response = response_raw.strip()
+    response = UserInput(response_raw)
 
-    if response == '!q':
-        sys.exit(1)
-
-    if response == '':
-        if ',' not in suggestion:
-            return suggestion
-        else:
-            """Some suggestions have multiple alternatives,
-            separated by commas; force to pick one"""
-            return get_fix(line, typo_span, suggestion, orig)
-
-    if response in '!/':
-        return orig
-
-    if response == '!h' or response.startswith('!'):
+    if response.quit():
+        return Quit()
+    elif response.get_help():
         print('Commands:\n'
               '\t!h for help\n'
               '\t!q to quit\n'
-              '"!" or "/" to leave as-is\n'
-              'leave blank and hit Enter to accept suggestion\n')
+              '"!" or "/" to accept suggestion\n'
+              'leave blank and hit Enter to leave as-is\n'
+              '"!i" to ignore suggestion for rest of session')
         return get_fix(line, typo_span, suggestion, orig)
-
-    return response
+    elif response.re_check():
+        """Some suggestions have multiple alternatives,
+        separated by commas; force to pick one"""
+        return get_fix(line, typo_span, suggestion, orig)
+    elif response.accept_suggestion() and ',' not in suggestion:
+        return Literal(suggestion)
+    elif response.literal():
+        return Literal(response.input)
+    elif response.keep_original():
+        return Keep()
+    elif response.ignore():
+        return Ignore(orig)
+    else:
+        return get_fix(line, typo_span, suggestion, orig)
 
 
 def iterate_over_file(f, all_typos, found_typos):
@@ -77,7 +78,10 @@ def iterate_over_file(f, all_typos, found_typos):
 
     all_lines = []
 
-    re_pat = re.compile('|'.join(r'\W' + found_typo + r'\W' for found_typo in found_typos))
+    def get_regex(typos):
+        return re.compile('|'.join(r'\W' + found_typo + r'\W' for found_typo in typos))
+
+    re_pat = get_regex(found_typos)
 
     with open(f, 'r') as fname:
         raw_lines = fname.readlines()
@@ -85,19 +89,34 @@ def iterate_over_file(f, all_typos, found_typos):
     for raw_line in raw_lines:
         line = raw_line
 
+        if len(line) > MAX_LINE_LEN:
+            continue
+
         m = re_pat.search(line)
 
-        while m and (len(line) < MAX_LINE_LEN):
+        while found_typos and m and (len(line) < MAX_LINE_LEN):
             matched_typo = re.sub('[^a-zA-Z]+', '', m.group())
 
             fix = get_fix(line, m.span(),
                           all_typos.get(matched_typo, None) or all_typos[matched_typo.lower()], matched_typo)
 
-            if fix == matched_typo:
+            if isinstance(fix, Quit):
+                return fix
+            elif isinstance(fix, Keep):
                 # If skip the fix, assume rest of line is acceptable
                 break
+            elif isinstance(fix, Ignore):
+                to_ignore = fix.word
+                found_typos = [t for t in found_typos if t != to_ignore]
+
+                re_pat = get_regex(found_typos)
+                m = re_pat.search(line)
+
+                continue
 
             has_rewrites = True
+
+            fix = fix.word
 
             print('Before: {}'.format(line))
             line = re.sub(r'(\W)' + matched_typo + r'(\W)',
@@ -187,7 +206,10 @@ if __name__ == '__main__':
             if file_typos:
                 print('Suggestions follow for file {}'.format(search_file))
                 print('file_typos: {}'.format(file_typos))
-                iterate_over_file(search_file, typos, file_typos)
+                res = iterate_over_file(search_file, typos, file_typos)
+
+                if isinstance(res, Quit):
+                    break
 
         except OSError:
             pass

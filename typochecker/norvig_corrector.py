@@ -6,7 +6,7 @@ import argparse
 import os
 from collections import Counter
 
-from utils import candidates, get_words_in_file, get_default_typos
+from typochecker.utils import candidates, get_words_in_file, get_default_typos
 
 # Assumption: long lines (e.g., in JSON files) should be skipped
 MAX_LINE_LEN = 200
