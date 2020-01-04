@@ -109,6 +109,11 @@ def iterate_over_file(f, all_typos, found_typos):
                 to_ignore = fix.word
                 found_typos = [t for t in found_typos if t != to_ignore]
 
+                # Don't look for this "typo" in the future
+                all_typos.pop(to_ignore, None)
+                all_typos.pop(to_ignore.lower(), None)
+                all_typos.pop(to_ignore.title(), None)
+
                 re_pat = get_regex(found_typos)
                 m = re_pat.search(line)
 
