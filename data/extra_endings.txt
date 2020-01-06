@@ -1238,6 +1238,7 @@ metions->mentions
 mght->might
 mgic->magic
 michale->michael
+migh->might
 miic->mimic
 millisecods->milliseconds
 minimun->minimum

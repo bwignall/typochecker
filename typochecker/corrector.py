@@ -53,9 +53,9 @@ def get_fix(line, typo_span, suggestion, orig):
         print('Commands:\n'
               '\t!h for help\n'
               '\t!q to quit\n'
-              '"!" or "/" to accept suggestion\n'
-              'leave blank and hit Enter to leave as-is\n'
-              '"!i" to ignore suggestion for rest of session')
+              '\t"!" or "/" to accept suggestion\n'
+              '\tleave blank and hit Enter to leave as-is\n'
+              '\t"!i" to ignore suggestion for rest of session')
         return get_fix(line, typo_span, suggestion, orig)
     elif response.re_check():
         """Some suggestions have multiple alternatives,
@@ -88,9 +88,6 @@ def iterate_over_file(f, all_typos, found_typos):
 
     for raw_line in raw_lines:
         line = raw_line
-
-        if len(line) > MAX_LINE_LEN:
-            continue
 
         m = re_pat.search(line)
 
