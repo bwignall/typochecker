@@ -7,7 +7,7 @@ For now, the code is run via cloning from GitHub
 (a PR to make this pip-installable would be welcomed).
 
 ```shell script
-git clone https://www.github.com/bwignall/typochecker
+git clone https://github.com/bwignall/typochecker.git
 cd typochecker
 ```
 
