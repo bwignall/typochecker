@@ -32,10 +32,11 @@ def edits1(word):
     transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R) > 1]
     replaces = [L + c + R[1:] for L, R in splits if R for c in letters]
     inserts = [L + c + R for L, R in splits for c in letters]
-    # return set(deletes + transposes + replaces + inserts)
-    # return set(transposes + replaces)
-    # return set(transposes + inserts + deletes)
-    return set(transposes + inserts)
+
+    # return set(deletes + inserts + replaces + transposes)
+    # return set(replaces + transposes)
+    # return set(deletes + inserts + transposes)
+    return set(inserts + transposes)
     # return set(transposes)
 
 

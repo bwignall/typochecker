@@ -33,6 +33,7 @@ def order_typo_candidates(tcs):
     """
     return sorted(tcs, reverse=True, key=lambda x: max([cc / tc for (_, cc, tc) in x[1]]))
 
+
 def is_new_typo(suspected_typo):
     typo, correction = suspected_typo
     try:
@@ -127,10 +128,10 @@ if __name__ == '__main__':
         cs = candidates(sorted_word)
 
         if args.ignore_prepends:
-            cs = [c for c in cs if not c.endswith(sorted_word)]
+            cs = [c for c in cs if not c.endswith(sorted_word) and not sorted_word.startswith(c)]
 
         if args.ignore_appends:
-            cs = [c for c in cs if not c.startswith(sorted_word)]
+            cs = [c for c in cs if not c.startswith(sorted_word) and not sorted_word.endswith(c)]
 
         if cs and len(cs) < 5 and sorted_word not in cs:
             # Idea: the typo is made less frequently than the correct spelling

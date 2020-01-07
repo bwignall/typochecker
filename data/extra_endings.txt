@@ -1160,6 +1160,7 @@ lefmost->leftmost
 legitmately->legitimately
 legl->legal
 legnths->lengths
+legrendre->legendre
 leka->leak
 lengh->length
 lenghs->lengths
