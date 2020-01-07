@@ -6,17 +6,42 @@ import argparse
 import os
 from collections import Counter
 
-from utils import candidates, get_visible_subdirs, get_words_in_file, get_default_typos
+from typochecker.utils import candidates, get_visible_subdirs, get_words_in_file, get_default_typos
 
 # Assumption: long lines (e.g., in JSON files) should be skipped
 MAX_LINE_LEN = 200
 
 
+def order_typo_candidates(tcs):
+    """
+    Order typo candidates, according to which have the highest maximum ratio
+    between a candidate's count and a (suspected) typo's count. The idea is that
+    the rarer a "typo" is, the more likely it is to be a genuine typo.
+
+    Input:
+    - tcs : list of tuples, [(typo, [(candidate, candidate_cnt, typo_cnt)])]
+
+    Output:
+    - ordered list of tuples, [(typo, [(candidate, candidate_cnt, typo_cnt)])]
+
+    >>> t1 = ('t1', [('c1', 10, 1), ('c2', 11, 1)])
+    >>> t2 = ('t2', [('c1', 10, 4)])
+    >>> t3 = ('t3', [('c1', 10, 2), ('c3', 100, 99)])
+    >>> tcs = [t1, t2, t3]
+    >>> order_typo_candidates(tcs)
+    [('t1', [('c1', 10, 1), ('c2', 11, 1)]), ('t3', [('c1', 10, 2), ('c3', 100, 99)]), ('t2', [('c1', 10, 4)])]
+    """
+    return sorted(tcs, reverse=True, key=lambda x: max([cc / tc for (_, cc, tc) in x[1]]))
+
+
 def is_new_typo(suspected_typo):
     typo, correction = suspected_typo
     try:
-        response_raw = input('{}->{} ("!" to accept, "" to ignore): '.format(typo, correction))
-        if response_raw.startswith('!'):
+        response_raw = input('{}->{} ("!" to accept, "" to ignore, "!q" to quit): '.format(typo, correction))
+        if response_raw == '!q':
+            # Quit
+            return response_raw
+        elif response_raw.startswith('!'):
             return suspected_typo
         elif len(response_raw) > 1:
             return typo, response_raw
@@ -106,10 +131,10 @@ if __name__ == '__main__':
         cs = candidates(sorted_word)
 
         if args.ignore_prepends:
-            cs = [c for c in cs if not c.endswith(sorted_word)]
+            cs = [c for c in cs if not c.endswith(sorted_word) and not sorted_word.startswith(c)]
 
         if args.ignore_appends:
-            cs = [c for c in cs if not c.startswith(sorted_word)]
+            cs = [c for c in cs if not c.startswith(sorted_word) and not sorted_word.endswith(c)]
 
         if cs and len(cs) < 5 and sorted_word not in cs:
             # Idea: the typo is made less frequently than the correct spelling
@@ -121,13 +146,15 @@ if __name__ == '__main__':
 
             cnts = [(w, word_counter[w], word_counter[sorted_word]) for w in in_text]
             print('typo candidate: {}->{}'.format(sorted_word, ['{}'.format(x) for x in cnts]))
-            typo_candidates.append((sorted_word, ', '.join(in_text)))
+            typo_candidates.append((sorted_word, cnts, ', '.join(in_text)))
 
     print('Found {} typo candidates'.format(len(typo_candidates)))
 
     found_new_typos = []
-    for typo_candidate in typo_candidates:
-        res = is_new_typo(typo_candidate)
+    for (typo, _, candidates) in order_typo_candidates(typo_candidates):
+        res = is_new_typo((typo, candidates))
+        if res == '!q':
+            break
         if res is not None:
             found_new_typos.append(res)
 

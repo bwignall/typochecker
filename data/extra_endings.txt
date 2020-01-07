@@ -286,6 +286,7 @@ catc->catch
 catche->catches, catcher
 catergorizes->categorizes
 catestrophic->catastrophic
+cauchi->cauchy
 ccess->access
 cconstructs->constructs
 ccount->account
@@ -788,6 +789,7 @@ explicily->explicitly
 explicity->explicit, explicitly
 explict->explicit
 explictly->explicitly
+explorary->exploratory
 expres->expires, express
 expresion->expression
 expresions->expressions
@@ -1137,9 +1139,11 @@ itertor->iterator
 iterval->interval
 ivalid->invalid
 ixed->fixed, mixed
+kertosis->kurtosis
 keyord->keyword
 keywod->keyword
 knonw->known
+kurtoris->kurtosis
 kutosis->kurtosis
 labeleld->labelled
 lable->label
@@ -1160,6 +1164,7 @@ lefmost->leftmost
 legitmately->legitimately
 legl->legal
 legnths->lengths
+legrendre->legendre
 leka->leak
 lengh->length
 lenghs->lengths
@@ -1238,6 +1243,7 @@ metions->mentions
 mght->might
 mgic->magic
 michale->michael
+migh->might
 miic->mimic
 millisecods->milliseconds
 minimun->minimum

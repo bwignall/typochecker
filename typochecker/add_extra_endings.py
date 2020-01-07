@@ -2,7 +2,7 @@ import argparse
 import os
 import sys
 
-from utils import parse_typos_file
+from typochecker.utils import parse_typos_file
 
 # Assumption: long lines (e.g., in JSON files) should be skipped
 MAX_LINE_LEN = 200
