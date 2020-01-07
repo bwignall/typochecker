@@ -37,8 +37,11 @@ def order_typo_candidates(tcs):
 def is_new_typo(suspected_typo):
     typo, correction = suspected_typo
     try:
-        response_raw = input('{}->{} ("!" to accept, "" to ignore): '.format(typo, correction))
-        if response_raw.startswith('!'):
+        response_raw = input('{}->{} ("!" to accept, "" to ignore, "!q" to quit): '.format(typo, correction))
+        if response_raw == '!q':
+            # Quit
+            return response_raw
+        elif response_raw.startswith('!'):
             return suspected_typo
         elif len(response_raw) > 1:
             return typo, response_raw
@@ -150,6 +153,8 @@ if __name__ == '__main__':
     found_new_typos = []
     for (typo, _, candidates) in order_typo_candidates(typo_candidates):
         res = is_new_typo((typo, candidates))
+        if res == '!q':
+            break
         if res is not None:
             found_new_typos.append(res)
 
