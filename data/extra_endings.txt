@@ -16,9 +16,11 @@ acceptd->accepted
 accepte->accepted
 acces->access
 accesible->accessible
+accesors->accessors, access
 accmulate->accumulate
 accordinly->accordingly
 accoridng->according
+accpect->accept
 accpeted->accepted
 accpets->accepts
 accumlate->accumulate
@@ -48,6 +50,7 @@ adresd->address, addressed
 adresses->addresses
 afer->safer, after
 afix->affix
+afoter->after
 afte->after
 againt->against
 aggreate->aggregate
@@ -224,10 +227,12 @@ becaus->because
 becuase->because
 befor->before
 befroe->before
+beging->begin, being
 behaior->behavior
 behavor->behavior
 behvaior->behavior
 beign->begin, benign, being
+beind->behind, being, bind
 bejamin->benjamin
 benchamrk->benchmark
 bencmark->benchmark
@@ -383,6 +388,7 @@ colmun->column
 colmuns->columns
 colums->columns
 combind->combined
+comformance->conformance
 comibnation->combination
 comilation->compilation
 comiles->compiles
@@ -487,6 +493,7 @@ conversaion->conversion
 convers->converse, converts
 convertable->convertible
 convertr->converter
+convinent->convenient
 convrsions->conversions
 cooki->cookie
 cookin->cooking
@@ -599,6 +606,7 @@ dependenices->dependencies
 deprected->deprecated
 dept->depth
 deriv->derive
+derministic->deterministic
 derviative->derivative
 descide->decide
 desciptor->descriptor
@@ -763,6 +771,7 @@ enabel->enable
 ename->rename
 ence->hence
 encod->encode
+encounted->encounter, encountered
 encoutered->encountered
 encouters->encounters
 eneric->generic
@@ -861,6 +870,7 @@ expasion->expansion
 expecations->expectations
 expecs->expects
 expecte->expected
+expection->expecting, expectation
 expens->expense
 experiances->experiences
 experiemental->experimental
@@ -1075,11 +1085,13 @@ implemening->implementing
 implementaion->implementation
 implementaiton->implementation
 implementd->implemented, implement, implements
+implemention->implementation, implementing
 implementions->implementations
 implemetation->implementation
 implemetnation->implementation
 implemneted->implemented
 implemnted->implemented
+implentation->implementation
 impliation->implication
 implicilty->implicitly
 implicitely->implicitly
@@ -1226,6 +1238,7 @@ invarint->invariant
 invarints->invariants
 invese->inverse
 investigacion->investigation
+invidual->individual
 invlaid->invalid
 invlid->invalid
 invoves->involves
@@ -1309,6 +1322,7 @@ liux->linux
 lnes->lens
 lnks->links
 loade->loader, loaded
+loades->loads
 loadr->loader
 loal->local
 localy->locally
@@ -1528,6 +1542,7 @@ othe->other
 otheriwse->otherwise
 othewise->otherwise
 othre->other
+othwise->otherwise
 ouptut->output
 ouptuts->outputs
 ouput->output
@@ -1573,6 +1588,7 @@ parllel->parallel
 parsr->parser
 parteo->pareto
 passd->passed
+passesd->passed, passes
 passs->pass, passes
 pasword->password
 patc->patch
@@ -1629,6 +1645,7 @@ porject->project
 posibilities->possibilities
 posibility->possibility
 posiiton->position
+posisiton->position
 positins->positions
 possbily->possibly
 possibe->possible
@@ -1775,6 +1792,7 @@ refereced->referenced
 referecne->reference
 referecnes->references
 referemced->referenced
+refererence->reference
 referer->referrer
 referrenced->referenced
 refiying->reifying
@@ -1811,6 +1829,7 @@ reolad->reload
 reolution->revolution, resolution
 repalce->replace
 repated->repeated
+repeadly->repeatedly
 repeate->repeated
 repect->respect
 repesentationally->representationally
@@ -1985,6 +2004,7 @@ significand->significant
 significanlty->significantly
 significanly->significantly
 signleton->singleton
+signuarl->singular, signal
 simiarly->similarly
 similarites->similarities
 similary->similarly
@@ -2259,6 +2279,7 @@ ture->true
 txet->text
 tyep->type
 tyle->style
+typers->types
 typtes->types
 uable->usable, unable
 ublic->public
@@ -2371,6 +2392,7 @@ wasington->washington
 wathdog->watchdog
 wheher->whether
 whenver->whenever
+whill->will
 whithout->without
 whle->whole, while
 whre->where

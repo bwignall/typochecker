@@ -15,8 +15,8 @@ WORDS.update(wordify(open('/usr/share/dict/british-english-huge').read()))
 def candidates(word):
     """Generate possible spelling corrections for word."""
     # Unlike Norvig's solution, does *NOT* consider distance-2 edits
-    # return known([word]) or known(edits1(word)) or known(edits2(word)) or [word]
-    return known([word]) or known(edits1(word)) or [word]
+    return known([word]) or known(edits1(word)) or known(edits2(word)) or [word]
+    # return known([word]) or known(edits1(word)) or [word]
 
 
 def known(words):
@@ -35,8 +35,8 @@ def edits1(word):
 
     # return set(deletes + inserts + replaces + transposes)
     # return set(replaces + transposes)
-    # return set(deletes + inserts + transposes)
-    return set(inserts + transposes)
+    return set(deletes + inserts + transposes)
+    # return set(inserts + transposes)
     # return set(transposes)
 
 
