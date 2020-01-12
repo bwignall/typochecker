@@ -72,6 +72,35 @@ def get_fix(line, typo_span, suggestion, orig):
     else:
         return get_fix(line, typo_span, suggestion, orig)
 
+def get_fixed_line(line, matched_typo, fix):
+    """
+    >>> get_fixed_line('There isss a typo', 'isss', 'is')
+    'There is a typo'
+
+    >>> get_fixed_line('There is a tpyo', 'tpyo', 'typo')
+    'There is a typo'
+    
+    >>> get_fixed_line('Theer is a typo', 'Theer', 'There')
+    'There is a typo'
+    """
+    if re.search(r'^' + matched_typo + r'(\W)', line):
+        return re.sub(r'^' + matched_typo + r'(\W)',
+                      fix + r'\1',
+                      line,
+                      count=1)
+    elif re.search(r'(\W)' + matched_typo + r'$', line):
+        return re.sub(r'(\W)' + matched_typo + r'$',
+                      r'\1' + fix,
+                      line,
+                      count=1)
+    elif re.search(r'(\W)' + matched_typo + r'(\W)', line):
+        return re.sub(r'(\W)' + matched_typo + r'(\W)',
+                      r'\1' + fix + r'\2',
+                      line,
+                      count=1)
+
+    return line
+
 
 def iterate_over_file(f, all_typos, found_typos):
     has_rewrites = False
@@ -121,10 +150,7 @@ def iterate_over_file(f, all_typos, found_typos):
             fix = fix.word
 
             print('Before: {}'.format(line))
-            line = re.sub(r'(\W)' + matched_typo + r'(\W)',
-                          r'\1' + fix + r'\2',
-                          line,
-                          count=1)
+            line = get_fixed_line(line, matched_typo, fix)
 
             print('After:  {}'.format(line))
             m = re_pat.search(line)
