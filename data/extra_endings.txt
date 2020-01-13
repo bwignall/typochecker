@@ -112,6 +112,7 @@ anyawy->anyway
 anyhere->anywhere
 aone->alone
 aovid->avoid
+apacha->apache
 apar->apart
 apears->appears
 apparing->appearing
@@ -123,6 +124,7 @@ applicaitve->applicative
 applicatve->applicative
 appliction->application
 appoach->approach
+appplicable->applicable
 appplication->application
 appreas->appears
 approoximately->approximately
@@ -220,6 +222,7 @@ bakground->background
 balanc->balance
 bankin->banking
 basr->bars
+bavsis->basis
 bceomes->becomes
 beause->because
 becase->because
@@ -280,6 +283,8 @@ bufers->buffers
 bufferd->buffered
 buid->build
 buider->builder
+buiild->build
+builf->build, built
 builing->building
 buit->built
 bulding->building
@@ -321,6 +326,7 @@ ccess->access
 cconstructs->constructs
 ccount->account
 ccur->occur
+celect->select
 cenrality->centrality
 cerain->certain
 cercion->coercion
@@ -400,6 +406,7 @@ comm->comma
 commen->common
 commisiond->commissioned
 commmand->command
+commmon->common
 comms->commas
 comon->common
 compain->complain
@@ -530,6 +537,7 @@ coures->course
 coverred->covered
 coversion->conversion
 creat->create
+creato->create
 creats->creates
 critera->criteria
 criticsed->criticised
@@ -548,6 +556,7 @@ dagnostic->diagnostic
 datast->dataset
 datbase->database
 datset->dataset
+datta->data
 dattype->datatype
 dded->added
 ddress->address
@@ -573,10 +582,12 @@ decriptor->descriptor
 decriptors->descriptors
 decsriptor->descriptor
 deend->depend
+defalt->default, dealt
 defalut->default
 defaul->default
 defaut->default
 defautl->default
+defeault->default
 defered->deferred
 deffines->defines
 defiend->defined
@@ -640,6 +651,7 @@ detrmining->determining
 devation->devotion, deviation
 developemnt->development
 devides->divides
+dfault->default
 diagnising->diagnosing
 dianostic->diagnostic
 dicionaries->dictionaries
@@ -698,6 +710,7 @@ ditinguish->distinguish
 dito->ditto
 divegent->divergent
 dnotes->denotes
+dobule->double
 doctorial->doctoral
 documenation->documentation
 documentaion->documentation
@@ -718,6 +731,7 @@ droped->dropped
 dscriptor->descriptor
 dsign->design
 dsplayed->displayed
+dsta->data
 duing->during
 duplicatd->duplicated
 duplicte->duplicate
@@ -741,7 +755,9 @@ efort->effort
 eigenvecotrs->eigenvectors
 eiher->either
 elad->lead
+elastisearch->elasticsearch
 elast->least
+elaticsearch->elasticsearch
 elease->release
 elememts->elements
 elemnt->element
@@ -758,11 +774,13 @@ elminated->eliminated
 elminate->eliminate
 elsehwere->elsewhere
 elte->elite, elate, elbe, else
+elze->else
 embd->embed
 embeding->embedding
 eminates->emanates
 emiprical->empirical
 emluate->emulate
+emptby->empty
 empted->emptied, tempted
 empt->empty
 emsh->mesh
@@ -784,6 +802,7 @@ ensembe->ensemble
 ensurse->ensures
 entier->entire
 entites->entities
+entrt->entry
 environemnt->environment
 epartment->department
 ependent->dependent
@@ -803,7 +822,10 @@ equvalent->equivalent
 eriod->period
 eroneous->erroneous
 eror->error
+erors->errors, errs
+errir->error
 erros->errors
+errot->error
 errr->error
 esacpe->escape
 escpaed->escaped
@@ -843,6 +865,7 @@ exceution->execution
 exchage->exchange
 excl->excel
 exclue->exclude
+excpet->except
 excpetion->exception
 excpt->except
 excutables->executables
@@ -862,11 +885,13 @@ exhauted->exhausted
 exising->existing
 exisiting->existing
 exitsing->existing
+exitted->emitted, existed, exited
 exlude->exclude
 exlusively->exclusively
 expande->expander, expanded
 expantions->expansions
 expasion->expansion
+expcted->expected
 expecations->expectations
 expecs->expects
 expecte->expected
@@ -891,6 +916,8 @@ expresion->expression
 expresions->expressions
 expressoins->expressions
 expressons->expressions
+expresssion->expression
+exprt->expert, export
 expsed->exposed
 exract->extract
 exression->expression
@@ -910,12 +937,14 @@ failues->failures
 faily->family
 fales->false
 fallack->fallback
+faluse->false
 familar->familiar
 familia->familiar
 famly->family
 fanc->fancy
 fasion->fashion
 featues->features
+felse->false
 fetaures->features
 fetchs->fetches
 feth->fetch
@@ -927,6 +956,8 @@ filld->filled
 fillin->fill in, filling
 financ->finance
 finit->finite
+firmat->format
+firsrt->first
 fisrt->first
 fittng->fitting
 fixe->fixed, fixes
@@ -953,6 +984,7 @@ forally->formally
 forc->force
 foregound->foreground
 forgeting->forgetting
+formaat->format
 formallizes->formalizes
 formated->formatted
 formater->formatter
@@ -975,11 +1007,14 @@ froms->forms
 frst->first
 fucntions->functions
 fuction->function
+funcation->function
+funcion->function
 funcions->functions
 funcitonality->functionality
 funciton->function
 funcitons->functions
 functin->function
+functino->function
 functins->functions
 functiona->functional
 functionailty->functionality
@@ -992,6 +1027,7 @@ funtions->functions
 funtor->functor
 furter->further
 furture->future
+fyrst->first
 garded->guarded
 gaurded->guarded
 geater->greater
@@ -1004,6 +1040,7 @@ generting->generating
 genrators->generators
 genreators->generators
 genrically->generically
+giraph->graph
 givin->giving
 givne->given
 givng->giving
@@ -1017,6 +1054,7 @@ gose->goes
 goups->groups
 grah->graph
 graident->gradient
+grapth->graph
 gregoran->gregorian
 gren->green
 gret->great
@@ -1040,6 +1078,7 @@ handels->handles
 handls->handles
 hannel->channel
 hape->shape
+havde->have
 havn->haven
 hbit->habit
 headr->header
@@ -1057,6 +1096,7 @@ htrough->through
 hueristics->heuristics
 hwere->where
 hypen->hyphen
+iata->data, kata, iota
 icrosoft->microsoft
 identation->indentation
 identfier->identifier
@@ -1079,6 +1119,7 @@ imlpementation->implementation
 immedately->immediately
 immitates->imitates
 imoprts->imports
+imort->import
 implcit->implicit
 implemenation->implementation
 implemening->implementing
@@ -1104,16 +1145,21 @@ imporant->important
 imporantly->importantly
 imposible->impossible
 improvment->improvement
+imput->input
 inaginary->imaginary
 inagine->imagine
 inceased->increased, incensed
 inclding->including
+includs->includes, include
 incluidng->including
+inclule->include
+incluye->include
 incompletes->incomplete
 incorectly->incorrectly
 incorprated->incorporated
 incorrecty->incorrectly
 inctroduces->introduces
+inculde->include
 indepedent->independent
 independely->independently
 independendly->independently
@@ -1139,6 +1185,9 @@ infinties->infinities
 infinty->infinity
 infniite->infinite
 infor->inform
+informantion->information
+informartion->information
+informtaion->information
 infrastructre->infrastructure
 infx->infix
 ingore->ignore
@@ -1171,6 +1220,9 @@ inlne->inline
 inlude->include
 inluding->including
 inocuous->innocuous
+inodex->index
+inport->import
+inpput->input
 inptus->inputs
 insall->install
 insantiates->instantiates
@@ -1197,6 +1249,7 @@ intantiate->instantiate
 intead->instead
 inteface->interface
 inteference->interference
+integner->integer
 integra->integral
 integr->integer
 intenionally->intentionally
@@ -1226,6 +1279,7 @@ intialize->initialize
 intializers->initializers
 intializes->initializes
 intiializing->initializing
+intput->input
 intrday->intraday
 intreactions->interactions
 introducion->introduction
@@ -1256,6 +1310,7 @@ issuu->issue
 istantiate->instantiate
 istantiation->instantiation
 isused->issued, misused
+isze->size, isle
 iteartion->iteration
 iteger->integer
 itermediate->intermediate
@@ -1266,12 +1321,14 @@ itertor->iterator
 iterval->interval
 ivalid->invalid
 ixed->fixed, mixed
+jmport->import
 jospeh->joseph
 keely->keenly
 kertosis->kurtosis
 keyord->keyword
 keywod->keyword
 knonw->known
+kuery->query
 kurtoris->kurtosis
 kutosis->kurtosis
 labeleld->labelled
@@ -1299,6 +1356,7 @@ legrendre->legendre
 leka->leak
 lengh->length
 lenghs->lengths
+lenghth->length
 lengt->length
 lenths->lengths
 lenth->tenth, lents, length, lent
@@ -1310,6 +1368,7 @@ liabilit->liability
 libaries->libraries
 librarie->libraries
 libray->library
+licnese->license
 lieks->likes
 limination->elimination
 limitied->limited
@@ -1356,6 +1415,7 @@ mattr->matter
 maximimum->maximum
 maxinum->maximum
 maye->maybe
+mdoel->model
 measurments->measurements
 measurs->measures
 meatdata->metadata
@@ -1369,6 +1429,7 @@ menssage->message
 mesage->message
 mesasge->message
 messag->message
+messsage->message
 mesures->measures
 metdata->metadata
 metion->mention
@@ -1404,6 +1465,7 @@ morever->moreover
 morevoer->moreover
 morover->moreover
 movs->moves
+mpdule->module
 mplementation->implementation
 msis->miss
 mssage->massage, message
@@ -1417,6 +1479,7 @@ multiplciation->multiplication
 multipliative->multiplicative
 multipliction->multiplication
 mulyiple->multiple
+muost->must, most
 mutiple->multiple
 mutiplication->multiplication
 mutli->multi
@@ -1440,6 +1503,7 @@ neigbors->neighbors
 neihter->neither
 netail->detail, entail
 neta->neat
+nethod->method
 nevetheless->nevertheless
 newsrgoups->newsgroups
 newy->newly
@@ -1471,9 +1535,14 @@ nterface->interface
 nterval->interval
 nuls->nulls
 numberic->numeric
+numebr->number
 numercial->numerical
+nummber->number
 numric->numeric
 obejct->object
+obeject->object
+objecct->object
+objecr->object
 obsevations->observations
 occations->occasions
 occupany->occupancy
@@ -1492,13 +1561,17 @@ oline->online
 olutions->solutions
 omeg->omega
 omething->something
+omne->omni, one
 omponent->component
 omputer->computer
 onec->once
 onempty->nonempty
+onfe->once, one
+onje->once, one
 onsequently->consequently
 ontent->content
 onth->month
+onze->once, one
 oogle->google
 opeartion->operation
 opeartor->operator
@@ -1512,6 +1585,7 @@ opne->open
 oposed->opposed
 oppsed->opposed
 oprhan->orphan
+optain->obtain
 optimiation->optimization
 optimistaion->optimisation
 optimiz->optimize
@@ -1519,7 +1593,11 @@ optimsed->optimised
 optimze->optimize
 optimzied->optimized
 optinal->optional
+optinos->options
+optioal->optical, optional, optimal
 optiona->optional
+optionb->options
+optiones->options
 optmization->optimization
 optmizing->optimizing
 optoins->options
@@ -1533,6 +1611,7 @@ orinary->ordinary
 orman->roman
 ormat->format
 orpha->orphan
+orther->other
 orthognal->orthogonal
 ortran->fortran
 orus->ours
@@ -1543,6 +1622,7 @@ otheriwse->otherwise
 othewise->otherwise
 othre->other
 othwise->otherwise
+otuput->output
 ouptut->output
 ouptuts->outputs
 ouput->output
@@ -1551,6 +1631,7 @@ ouside->outside
 oute->route, outer
 outpus->outputs
 outputing->outputting
+outupt->output
 oututs->outputs
 oveflow->overflow
 overfow->overflow
@@ -1562,6 +1643,7 @@ overriden->overridden
 overrieds->overrides
 overrie->override
 overritten->overwritten
+overrride->override
 overwiting->overwriting
 ovre->over
 owership->ownership
@@ -1573,6 +1655,7 @@ packgae->package
 packges->packages
 paddd->padded
 paht->path
+pakcage->package
 panads->pandas
 pandsa->pandas
 paralle->parallel
@@ -1640,6 +1723,7 @@ polymophism->polymorphism
 polymoprhic->polymorphic
 polynmial->polynomial
 polynomal->polynomial
+poperty->property, poverty
 porcessing->processing
 porject->project
 posibilities->possibilities
@@ -1731,6 +1815,8 @@ prxy->proxy
 psuedocode->pseudocode
 ptic->optic
 publib->public
+publie->public
+publik->public
 publi->public
 publis->publish
 purne->prune
@@ -1860,6 +1946,8 @@ requres->requires
 requried->required
 requries->requires
 requsted->requested
+requst->request
+reqwest->request
 resepct->respect
 resonable->reasonable
 resouce->resource
@@ -1873,6 +1961,7 @@ ressembles->resembles
 restor->restore
 restrcted->restricted
 restrction->restriction
+restult->result
 resued->rescued, reused
 resul->result
 resutls->results
@@ -1884,8 +1973,10 @@ retrive->retrieve
 retriving->retrieving
 retrun->return
 retruns->returns
+retun->rerun, return
 retuns->returns
 retured->returned
+returne->return, returns
 reuslt->result
 revent->prevent
 revents->prevents
@@ -1979,8 +2070,10 @@ serialzing->serializing
 serie->series
 serilized->serialized
 setable->settable
+settingn->setting, settings
 settins->settings
 sfot->soft
+shapr->sharp, shape
 shaza->shazam
 shceme->scheme
 shere->sphere
@@ -1989,6 +2082,7 @@ shif->shift
 shifte->shifted
 shirmp->shrimp
 shortn->shorten
+shouln->should, shouldn
 shoul->should
 showd->showed
 shpae->shape
@@ -2054,9 +2148,12 @@ specfied->specified
 specialied->specialized
 specialse->specialise
 specialzation->specialization
+specical->special
+specifal->special
 specifc->specific
 specifed->specified
 specificlaly->specifically
+specifig->specific
 specifing->specifying
 specifiy->specify, specific
 specilizations->specializations
@@ -2066,13 +2163,18 @@ spedific->specific
 speicalise->specialise
 speicalize->specialize
 speical->special
+speicfic->specific
+speicial->special
 speified->specified
 spellcecker->spellchecker
+spesific->specific
 spliting->splitting
 spurios->spurious
 spurous->spurious
 squence->sequence
+sratus->status
 srictly->strictly
+staatus->status
 stablity->stability
 stablize->stabilize
 stac->stack
@@ -2082,7 +2184,9 @@ standalon->standalone
 statisitcal->statistical
 statisticans->statisticians
 statments->statements
+statss->states, status
 steram->stream
+stirng->string
 stll->still
 stoer->store
 stord->stored
@@ -2109,6 +2213,7 @@ stuctures->structures
 stuffd->stuffed
 stuf->stuff
 styl->style
+styte->state, style
 subclasse->subclassed, subclasses
 subclasss->subclass, subclasses
 subcommitee->subcommittee
@@ -2187,12 +2292,16 @@ telesope->telescope
 teminates->terminates
 temorary->temporary
 temperatue->temperature
+tenosr->tensor
+tensdor->tensor
+tensoflow->tensorflow
 teoretically->theoretically
 tepmerature->temperature
 termimation->termination
 terminted->terminated
 tesing->testing
 tesnors->tensors
+tesnor->tensor
 tesor->tensor
 testd->tested, tests
 testin->testing
@@ -2215,6 +2324,7 @@ thusday->thursday
 tial->tail, trial
 timout->timeout
 tiple->triple
+tjme->time
 toal->total
 toastd->toasted
 toch->touch
@@ -2279,8 +2389,11 @@ ture->true
 txet->text
 tyep->type
 tyle->style
+typeds->typed, types
 typers->types
+typles->tuples, types
 typtes->types
+typw->typo, typy, type
 uable->usable, unable
 ublic->public
 ublk->bulk
@@ -2294,7 +2407,9 @@ ulimately->ultimately
 unavailble->unavailable
 unchnged->unchanged
 unctor->functor
+undefiner->undefined
 undeflow->underflow
+underfined->undefined, underlined
 underfow->underflow, undertow
 underlyng->underlying
 underying->underlying
@@ -2324,6 +2439,7 @@ universit->university
 unknow->unknown
 unles->unless
 unligned->unaligned
+unmber->number
 unncessarily->unnecessarily
 unneded->unneeded
 unnnamed->unnamed
@@ -2347,10 +2463,13 @@ uselses->useless
 utilites->utilities
 utilties->utilities
 utilty->utility
+vactor->factor, vector, victor
 vaid->valid
 vailable->available
 vaild->valid
 vaious->various
+valiues->values
+valuen->values, valued
 varaibles->variables
 varaince->variance
 varant->variant, vagrant
@@ -2363,12 +2482,16 @@ variat->variant
 varible->variable
 varint->variant
 varius->various
+vaules->values
 vaule->value
 vectos->vectors
 vecto->vector
+vefrsion->version
 verbaitm->verbatim
 verifed->verified
 verion->version
+versioon->version
+versjon->version
 verson->version
 vertx->vertex
 verview->overview
@@ -2385,24 +2508,32 @@ vlaue->value
 vokswagen->volkswagen
 vreify->verify
 vrsion->version
+walue->value
 warninig->warning
 warppers->wrappers
 warpper->wrapper
 wasington->washington
 wathdog->watchdog
+wdth->with, width
+wersion->version
 wheher->whether
 whenver->whenever
 whill->will
 whithout->without
 whle->whole, while
+whould->should, would
 whre->where
 widht->width
 wihin->within
 wihtout->without
+wiih->wish, with
+wiill->will
 wikpedia->wikipedia
 wildards->wildcards
 wildcars->wildcards
+witih->with, witch
 witout->without
+witth->with, width, witch
 wner->owner
 workarond->workaround
 workd->worked
@@ -2417,6 +2548,7 @@ wrld->world
 wrtie->write
 wtihout->without
 xact->exact
+xalue->value
 xecutable->executable
 xford->oxford
 xpected->expected

@@ -41,7 +41,7 @@ def is_new_typo(suspected_typo):
         if response_raw == '!q':
             # Quit
             return response_raw
-        elif response_raw.startswith('!'):
+        elif response_raw.startswith('!') or response_raw == '/':
             return suspected_typo
         elif len(response_raw) > 1:
             return typo, response_raw
@@ -163,6 +163,8 @@ if __name__ == '__main__':
             break
         if res is not None:
             found_new_typos.append(res)
+
+            
 
     open('data/levenshtein_util_typos.txt', 'w').write('\n'.join(['{}->{}'.format(x, y)
                                                                   for (x, y) in found_new_typos]))
