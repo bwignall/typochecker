@@ -120,8 +120,14 @@ if __name__ == '__main__':
 
     typo_candidates = []
 
+    ascii_letters = 'abcdefghijklmnopqrstuvwxyz'
+    assert 26 == len(ascii_letters), 'Should have 26 letters in alphabet, not {}'.format(len(ascii_letters))
+
     for sorted_word in sorted_words:
         if len(sorted_word) > 20:
+            continue
+
+        if any([c not in ascii_letters for c in sorted_word]):
             continue
 
         # Idea: commonly used words aren't typos
