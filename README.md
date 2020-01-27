@@ -1,7 +1,9 @@
 A tool to help (semi-)automatically find typos.
 By default, uses Wikipedia as source of likely typos.
 
-# Get the code
+# Setup
+
+## Get the code
 
 For now, the code is run via cloning from GitHub
 (a PR to make this pip-installable would be welcomed).
@@ -11,7 +13,15 @@ git clone https://github.com/bwignall/typochecker.git
 cd typochecker
 ```
 
-# Usage:
+## Install dependencies
+
+The code currently requires access to certain UK and US dictionaries.
+
+```shell script
+sudo apt-get install wamerican-huge wbritish-huge
+```
+
+# Usage
 
 ## Specify the folder explicitly
 
@@ -31,14 +41,16 @@ make -f path/to/typochecker/Makefile
 
 Example (explicit): `cd path/to/my/folder ; git ls-files | python path/to/my/git/src/typochecker/corrector.py`
 
+## Handling typos (keyboard input) 
+
 For either method, this will iterate through the files found, cross-reference the 
 list of likely typos, and prompt the user for how they would like to handle
 each potential typo. Files will be modified, but no Git commits happen 
 automatically.
 
-* To accept the suggestion, press Enter.
-* To ignore the suggestion and keep the existing text, enter `!` or `/`.
-(`Ctrl-D` may also work.)
+* To accept the suggestion, enter `/`.
+* To ignore the suggestion and keep the existing text, press `Enter`.
+* To ignore the "typo" for the remainder of the session, enter `!i`.
 * For help, enter `!h`.
 
 ## Whitelist words

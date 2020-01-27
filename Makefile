@@ -23,4 +23,4 @@ data/wikipedia_common_misspellings_raw.txt:
 
 data/wikipedia_common_misspellings.txt: data/wikipedia_common_misspellings_raw.txt
 	# Remove noisy typos
-	cat data/wikipedia_common_misspellings_raw.txt | grep -v '^aka' | grep -v '^cmo' > $@
+	cat data/wikipedia_common_misspellings_raw.txt | grep -v '^aka' | grep -v '^cmo' | grep -v '^significand' > $@
