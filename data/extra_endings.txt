@@ -2094,7 +2094,6 @@ sigature->signature
 sigleton->singleton
 signatues->signatures
 signaure->signature
-significand->significant
 significanlty->significantly
 significanly->significantly
 signleton->singleton
