@@ -213,6 +213,8 @@ if __name__ == '__main__':
     # Remove some case sensitivity
     titled_typos = {k.title(): v.title() for k, v in typos.items()}
     typos.update(titled_typos)
+    upper_typos = {k.upper(): v.upper() for k, v in typos.items()}
+    typos.update(upper_typos)
 
     file_beginnings_to_ignore = ['LICENSE']
     file_endings_to_ignore = ['~', '.exe', '.gz', '.jar', '.pdf', '.xml', '.zip']
