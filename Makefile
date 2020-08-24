@@ -1,9 +1,9 @@
 TC_PATH = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 
-typocheck: 
+typocheck:
 	git ls-files | python $(TC_PATH)/corrector.py
 
-typocheckDir: 
+typocheckDir:
 	git ls-files | python $(TC_PATH)/corrector.py -d .
 
 # data/extra_endings.txt:

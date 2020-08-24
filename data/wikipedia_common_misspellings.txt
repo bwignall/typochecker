@@ -2693,7 +2693,7 @@ originnally->originally
 origional->original
 orignally->originally
 orignially->originally
-otehr->other 
+otehr->other
 otherwordly->otherworldly
 oublisher->publisher
 ouevre->oeuvre

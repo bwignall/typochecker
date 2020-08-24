@@ -1,0 +1,25 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: requirements-txt-fixer
+    -   id: check-added-large-files
+    -   id: check-ast
+    -   id: check-docstring-first
+    -   id: check-json
+    -   id: check-merge-conflict
+    -   id: check-yaml
+    -   id: debug-statements
+    -   id: end-of-file-fixer
+    -   id: name-tests-test
+-   repo: https://gitlab.com/pycqa/flake8
+    rev: 3.8.0
+    hooks:
+    -   id: flake8
+        additional_dependencies: [flake8-typing-imports==1.7.0]
+-   repo: https://github.com/psf/black
+    rev: stable
+    hooks:
+      - id: black
+        language_version: python3.7

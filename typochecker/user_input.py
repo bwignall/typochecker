@@ -40,26 +40,31 @@ class UserInput(object):
         return
 
     def quit(self):
-        return self.input == '!q'
+        return self.input == "!q"
 
     def get_help(self):
-        return self.input == '!h'
+        return self.input == "!h"
 
     def keep_original(self):
-        return self.input == ''
+        return self.input == ""
 
     def ignore(self):
-        return self.input.lower() == '!i'
+        return self.input.lower() == "!i"
 
     def accept_suggestion(self, commas_allowed=False):
-        return any([c == self.input for c in '/!']) and not self.re_check(commas_allowed)
+        return any([c == self.input for c in "/!"]) and not self.re_check(
+            commas_allowed
+        )
 
     def literal(self):
-        return (not self.keep_original() and not self.accept_suggestion() and
-                not any([c in self.input for c in '/!']))
+        return (
+            not self.keep_original()
+            and not self.accept_suggestion()
+            and not any([c in self.input for c in "/!"])
+        )
 
     def re_check(self, commas_allowed=False):
-        return not commas_allowed and ',' in self.input
+        return not commas_allowed and "," in self.input
 
 
 class UserResponse(object):
