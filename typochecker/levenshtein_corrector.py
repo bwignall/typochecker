@@ -198,8 +198,8 @@ if __name__ == "__main__":
     print("Found {} typo candidates".format(len(typo_candidates)))
 
     found_new_typos = []
-    for (typo, _, candidates) in order_typo_candidates(typo_candidates):
-        res = is_new_typo((typo, candidates))
+    for (typo, _, typo_candidates) in order_typo_candidates(typo_candidates):
+        res = is_new_typo((typo, typo_candidates))
         if res == "!q":
             break
         if res is not None:

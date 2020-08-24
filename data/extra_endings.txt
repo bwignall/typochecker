@@ -489,7 +489,7 @@ contrl->control
 controlld->controlled
 contruct->construct
 contructor->constructor
-contructors->constructors  
+contructors->constructors
 conts->counts
 convegence->convergence
 conveinence->convenience
@@ -1087,7 +1087,7 @@ hierarhcy->hierarchy
 higlights->highlights
 higly->highly
 hisory->history
-historial->historical 
+historial->historical
 hlaf->half
 hoko->hook
 homogeneizes->homogenizes
