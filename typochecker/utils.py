@@ -5,11 +5,11 @@ from collections import Counter
 
 # <Norvig>
 def wordify(text):
-    return re.findall(r'\w+', text.lower())
+    return re.findall(r"\w+", text.lower())
 
 
-WORDS = Counter(wordify(open('/usr/share/dict/american-english-huge').read()))
-WORDS.update(wordify(open('/usr/share/dict/british-english-huge').read()))
+WORDS = Counter(wordify(open("/usr/share/dict/american-english-huge").read()))
+WORDS.update(wordify(open("/usr/share/dict/british-english-huge").read()))
 
 
 def candidates(word):
@@ -26,7 +26,7 @@ def known(words):
 
 def edits1(word):
     """All edits that are one edit away from `word`."""
-    letters = 'abcdefghijklmnopqrstuvwxyz'
+    letters = "abcdefghijklmnopqrstuvwxyz"
     splits = [(word[:i], word[i:]) for i in range(len(word) + 1)]
     deletes = [L + R[1:] for L, R in splits if R]
     transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R) > 1]
@@ -47,15 +47,16 @@ def edits2(word):
 
 # </Norvig>
 
+
 def parse_typos_file(loc):
-    print('opening {}'.format(loc))
-    with open(loc, 'r') as fname:
+    print("opening {}".format(loc))
+    with open(loc, "r") as fname:
         ls = fname.readlines()
 
     d = {}
 
     for line in ls:
-        k, v = line.strip().split('->')
+        k, v = line.strip().split("->")
         d.update({k: v})
 
     return d
@@ -64,41 +65,44 @@ def parse_typos_file(loc):
 def get_visible_subdirs(loc):
     all_files = []
     for root, dirs, files in os.walk(loc):
-        if any([d.startswith('.') for d in root.split(os.sep)
-                if d != '.']):
+        if any([d.startswith(".") for d in root.split(os.sep) if d != "."]):
             # Ignore hidden directories
             # (which are assumed to start with '.')
             continue
         else:
-            all_files.extend([os.path.join(root, filename)
-                              for filename in files])
+            all_files.extend([os.path.join(root, filename) for filename in files])
 
     return all_files
 
 
 def get_words_in_string(s):
-    words = re.findall(r'[\w]+', s)
+    words = re.findall(r"[\w]+", s)
 
     return words
 
 
 def get_words_in_file(f):
-    with open(f, 'r') as ff:
+    with open(f, "r") as ff:
         lines = ff.readlines()
 
     # Ignore lines that have email addresses
-    lines = [line.strip().replace('\\n', '') for line in lines if '@' not in line]
+    lines = [line.strip().replace("\\n", "") for line in lines if "@" not in line]
 
-    return get_words_in_string(' '.join(lines))
+    return get_words_in_string(" ".join(lines))
 
 
 def get_default_typos():
     # By default, use typos gathered at
     # https://en.wikipedia.org/wiki/Wikipedia:Lists_of_common_misspellings/For_machines
-    typos_loc = os.path.join(os.path.dirname(__file__),
-                             os.pardir, 'data', 'wikipedia_common_misspellings.txt')
-    extra_typos_loc = os.path.join(os.path.dirname(__file__),
-                                   os.pardir, 'data', 'extra_endings.txt')
+    typos_loc = os.path.join(
+        os.path.dirname(__file__),
+        os.pardir,
+        "data",
+        "wikipedia_common_misspellings.txt",
+    )
+    extra_typos_loc = os.path.join(
+        os.path.dirname(__file__), os.pardir, "data", "extra_endings.txt"
+    )
 
     typos = parse_typos_file(typos_loc)
     extra_typos = parse_typos_file(extra_typos_loc)
