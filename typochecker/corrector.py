@@ -3,8 +3,8 @@ import fileinput
 import os
 import re
 
-from typochecker.user_input import UserInput, Ignore, Keep, Literal, Quit
-from typochecker.utils import parse_typos_file, get_visible_subdirs
+from typochecker.user_input import Ignore, Keep, Literal, Quit, UserInput
+from typochecker.utils import get_visible_subdirs, parse_typos_file
 
 # Assumption: long lines (e.g., in JSON files) should be skipped
 MAX_LINE_LEN = 200
@@ -83,7 +83,7 @@ def get_fixed_line(line, matched_typo, fix):
 
     >>> get_fixed_line('There is a tpyo', 'tpyo', 'typo')
     'There is a typo'
-    
+
     >>> get_fixed_line('Theer is a typo', 'Theer', 'There')
     'There is a typo'
     """

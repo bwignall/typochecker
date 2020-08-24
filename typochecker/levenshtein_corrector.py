@@ -8,9 +8,9 @@ from collections import Counter
 
 from typochecker.utils import (
     candidates,
+    get_default_typos,
     get_visible_subdirs,
     get_words_in_file,
-    get_default_typos,
 )
 
 # Assumption: long lines (e.g., in JSON files) should be skipped
