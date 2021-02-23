@@ -32,8 +32,8 @@ def order_typo_candidates(tcs):
     >>> t1 = ('t1', [('c1', 10, 1), ('c2', 11, 1)])
     >>> t2 = ('t2', [('c1', 10, 4)])
     >>> t3 = ('t3', [('c1', 10, 2), ('c3', 100, 99)])
-    >>> tcs = [t1, t2, t3]
-    >>> order_typo_candidates(tcs)
+    >>> tcands = [t1, t2, t3]
+    >>> order_typo_candidates(tcands)
     [('t1', [('c1', 10, 1), ('c2', 11, 1)]), ('t3', [('c1', 10, 2), ('c3', 100, 99)]), ('t2', [('c1', 10, 4)])]
     """
     return sorted(

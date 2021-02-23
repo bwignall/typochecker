@@ -1,6 +1,7 @@
 import os
 import re
 from collections import Counter
+from typing import Dict, List
 
 
 # <Norvig>
@@ -48,7 +49,7 @@ def edits2(word):
 # </Norvig>
 
 
-def parse_typos_file(loc):
+def parse_typos_file(loc: str) -> Dict[str, str]:
     print("opening {}".format(loc))
     with open(loc, "r") as fname:
         ls = fname.readlines()
@@ -62,7 +63,7 @@ def parse_typos_file(loc):
     return d
 
 
-def get_visible_subdirs(loc):
+def get_visible_subdirs(loc: str) -> List[str]:
     all_files = []
     for root, dirs, files in os.walk(loc):
         if any([d.startswith(".") for d in root.split(os.sep) if d != "."]):

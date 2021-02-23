@@ -2,15 +2,26 @@ import argparse
 import fileinput
 import os
 import re
+from re import Pattern
+from typing import Any, Dict, List, Optional, Tuple
 
-from typochecker.user_input import Ignore, Keep, Literal, Quit, UserInput
+from typochecker.suggestion_response import (
+    AlwaysRespondIgnore,
+    Ignore,
+    Keep,
+    Quit,
+    Response,
+    SuggestionResponse,
+    Unknown,
+)
+from typochecker.user_input import UserResponse
 from typochecker.utils import get_visible_subdirs, parse_typos_file
 
 # Assumption: long lines (e.g., in JSON files) should be skipped
 MAX_LINE_LEN = 200
 
 
-def get_typos_in_string(s, known_typos):
+def get_typos_in_string(s: str, known_typos: Dict[str, str]) -> List:
     """
     >>> get_typos_in_string('foo buzz', {'foo': 'bar', 'bazz': 'buzz'})
     ['foo']
@@ -24,56 +35,38 @@ def get_typos_in_string(s, known_typos):
     return sorted([w for w in uniq_words if w.lower() in known_typos])
 
 
-def get_typos_in_file(f, known_typos):
+def get_typos_in_file(f: str, known_typos: Dict[str, str]) -> List:
     with open(f, "r") as ff:
         lines = ff.readlines()
 
     return get_typos_in_string(" ".join(lines), known_typos)
 
 
-def get_fix(line, typo_span, suggestion, orig):
+def get_fix(
+    line: str,
+    typo_span: Tuple[int, int],
+    suggestion: str,
+    orig: str,
+    responder: SuggestionResponse,
+) -> Response:
     print(line)
 
     cnt = typo_span[1] - typo_span[0] + 1
 
     # assume tab <=> 4 spaces, to align '^'s with text
-    ws_cnt = sum([4 if c == "\t" else 1 for c in line[: typo_span[0]]])
+    ws_cnt = sum(4 if c == "\t" else 1 for c in line[: typo_span[0]])
     print(" " * ws_cnt + "^" * cnt)
 
     print("Suggestion: {}".format(suggestion))
 
-    response_raw = input(
-        ('Correction ("!h" for help), default to {}: ').format(suggestion)
-    )
+    prompt = 'Correction ("!h" for help), default to {}: '.format(suggestion)
 
-    response = UserInput(response_raw)
+    response = responder.get_response(line, typo_span, suggestion, orig, prompt)
 
-    if response.quit():
-        return Quit()
-    elif response.get_help():
-        print(
-            "Commands:\n"
-            "\t!h for help\n"
-            "\t!q to quit\n"
-            '\t"!" or "/" to accept suggestion\n'
-            "\tleave blank and hit Enter to leave as-is\n"
-            '\t"!i" to ignore suggestion for rest of session'
-        )
-        return get_fix(line, typo_span, suggestion, orig)
-    elif response.re_check():
-        """Some suggestions have multiple alternatives,
-        separated by commas; force to pick one"""
-        return get_fix(line, typo_span, suggestion, orig)
-    elif response.accept_suggestion() and "," not in suggestion:
-        return Literal(suggestion)
-    elif response.literal():
-        return Literal(response.input)
-    elif response.keep_original():
-        return Keep()
-    elif response.ignore():
-        return Ignore(orig)
+    if not isinstance(response, Unknown):
+        return response
     else:
-        return get_fix(line, typo_span, suggestion, orig)
+        return get_fix(line, typo_span, suggestion, orig, responder)
 
 
 def get_fixed_line(line, matched_typo, fix):
@@ -99,18 +92,20 @@ def get_fixed_line(line, matched_typo, fix):
     return line
 
 
-def iterate_over_file(f, all_typos, found_typos):
+def iterate_over_lines(
+    raw_lines: List[str],
+    all_typos: Dict[str, str],
+    found_typos: List[str],
+    responder: SuggestionResponse,
+) -> Tuple[List[str], bool]:
     has_rewrites = False
 
     all_lines = []
 
-    def get_regex(typos):
+    def get_regex(typos: List[str]) -> Pattern:
         return re.compile("|".join(r"\W" + found_typo + r"\W" for found_typo in typos))
 
     re_pat = get_regex(found_typos)
-
-    with open(f, "r") as fname:
-        raw_lines = fname.readlines()
 
     for raw_line in raw_lines:
         line = raw_line
@@ -120,15 +115,21 @@ def iterate_over_file(f, all_typos, found_typos):
         while found_typos and m and (len(line) < MAX_LINE_LEN):
             matched_typo = re.sub("[^a-zA-Z]+", "", m.group())
 
-            fix = get_fix(
-                line,
-                m.span(),
-                all_typos.get(matched_typo, None) or all_typos[matched_typo.lower()],
-                matched_typo,
-            )
+            if matched_typo not in all_typos and matched_typo.lower() not in all_typos:
+                fix = Ignore(matched_typo)
+            else:
+                fix = get_fix(
+                    line,
+                    m.span(),
+                    all_typos.get(matched_typo, None)
+                    or all_typos[matched_typo.lower()],
+                    matched_typo,
+                    responder,
+                )
 
             if isinstance(fix, Quit):
-                return fix
+                # This will abandon any work so far on the file/lines
+                return raw_lines, False
             elif isinstance(fix, Keep):
                 # If skip the fix, assume rest of line is acceptable
                 break
@@ -140,6 +141,7 @@ def iterate_over_file(f, all_typos, found_typos):
                 all_typos.pop(to_ignore, None)
                 all_typos.pop(to_ignore.lower(), None)
                 all_typos.pop(to_ignore.title(), None)
+                all_typos.pop(to_ignore.upper(), None)
 
                 re_pat = get_regex(found_typos)
                 m = re_pat.search(line)
@@ -157,6 +159,25 @@ def iterate_over_file(f, all_typos, found_typos):
             m = re_pat.search(line)
 
         all_lines.append(line)
+
+    return all_lines, has_rewrites
+
+
+def iterate_over_file(
+    f: str,
+    all_typos: Dict[str, str],
+    found_typos: List[str],
+    responder: SuggestionResponse,
+) -> Optional[Any]:
+    with open(f, "r") as fname:
+        raw_lines = fname.readlines()
+
+    all_lines, has_rewrites = iterate_over_lines(
+        raw_lines, all_typos, found_typos, responder
+    )
+
+    if isinstance(all_lines, Quit):
+        return all_lines
 
     if has_rewrites:
         with open(f, "w") as fname:
@@ -180,6 +201,11 @@ if __name__ == "__main__":
         "--whitelist_file",
         action="append",
         help="A file containing words that should not be considered typos. Argument can be repeated",
+    )
+    parser.add_argument(
+        "--ignore-all",
+        action="store_true",
+        help="Ignore all suggestions (useful for debugging)",
     )
 
     args = parser.parse_args()
@@ -241,6 +267,11 @@ if __name__ == "__main__":
 
     print("Will search through {} files".format(len(all_files)))
 
+    if args.ignore_all:
+        responder = AlwaysRespondIgnore()
+    else:
+        responder = UserResponse()
+
     for search_file in all_files:
         if any([search_file.endswith(e) for e in file_endings_to_ignore]):
             continue
@@ -260,7 +291,7 @@ if __name__ == "__main__":
             if file_typos:
                 print("Suggestions follow for file {}".format(search_file))
                 print("file_typos: {}".format(file_typos))
-                res = iterate_over_file(search_file, typos, file_typos)
+                res = iterate_over_file(search_file, typos, file_typos, responder)
 
                 if isinstance(res, Quit):
                     break
