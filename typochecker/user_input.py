@@ -35,45 +35,45 @@ class UserInput(object):
     True
     """
 
-    def __init__(self, s):
+    def __init__(self, s: str) -> None:
         self.input = s.strip()
         return
 
-    def quit(self):
+    def quit(self) -> bool:
         return self.input == "!q"
 
-    def get_help(self):
+    def get_help(self) -> bool:
         return self.input == "!h"
 
-    def keep_original(self):
+    def keep_original(self) -> bool:
         return self.input == ""
 
     def ignore(self):
         return self.input.lower() == "!i"
 
-    def accept_suggestion(self, commas_allowed=False):
+    def accept_suggestion(self, commas_allowed: bool = False) -> bool:
         return any([c == self.input for c in "/!"]) and not self.re_check(
             commas_allowed
         )
 
-    def literal(self):
+    def literal(self) -> bool:
         return (
             not self.keep_original()
             and not self.accept_suggestion()
             and not any([c in self.input for c in "/!"])
         )
 
-    def re_check(self, commas_allowed=False):
+    def re_check(self, commas_allowed: bool = False) -> bool:
         return not commas_allowed and "," in self.input
 
 
 class UserResponse(object):
-    def __init__(self):
+    def __init__(self) -> None:
         return
 
 
 class Keep(UserResponse):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         return
 

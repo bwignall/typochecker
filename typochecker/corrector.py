@@ -2,15 +2,24 @@ import argparse
 import fileinput
 import os
 import re
+from re import Pattern
+from typing import Any, Dict, List, Optional, Tuple
 
-from typochecker.user_input import Ignore, Keep, Literal, Quit, UserInput
+from typochecker.user_input import (
+    Ignore,
+    Keep,
+    Literal,
+    Quit,
+    UserInput,
+    UserResponse,
+)
 from typochecker.utils import get_visible_subdirs, parse_typos_file
 
 # Assumption: long lines (e.g., in JSON files) should be skipped
 MAX_LINE_LEN = 200
 
 
-def get_typos_in_string(s, known_typos):
+def get_typos_in_string(s: str, known_typos: Dict[str, str]) -> List:
     """
     >>> get_typos_in_string('foo buzz', {'foo': 'bar', 'bazz': 'buzz'})
     ['foo']
@@ -24,14 +33,16 @@ def get_typos_in_string(s, known_typos):
     return sorted([w for w in uniq_words if w.lower() in known_typos])
 
 
-def get_typos_in_file(f, known_typos):
+def get_typos_in_file(f: str, known_typos: Dict[str, str]) -> List:
     with open(f, "r") as ff:
         lines = ff.readlines()
 
     return get_typos_in_string(" ".join(lines), known_typos)
 
 
-def get_fix(line, typo_span, suggestion, orig):
+def get_fix(
+    line: str, typo_span: Tuple[int, int], suggestion: str, orig: str
+) -> UserResponse:
     print(line)
 
     cnt = typo_span[1] - typo_span[0] + 1
@@ -99,12 +110,14 @@ def get_fixed_line(line, matched_typo, fix):
     return line
 
 
-def iterate_over_lines(raw_lines, all_typos, found_typos):
+def iterate_over_lines(
+    raw_lines: List[str], all_typos: Dict[str, str], found_typos: List[str]
+) -> Tuple[List[str], bool]:
     has_rewrites = False
 
     all_lines = []
 
-    def get_regex(typos):
+    def get_regex(typos: List[str]) -> Pattern:
         return re.compile("|".join(r"\W" + found_typo + r"\W" for found_typo in typos))
 
     re_pat = get_regex(found_typos)
@@ -158,7 +171,9 @@ def iterate_over_lines(raw_lines, all_typos, found_typos):
     return all_lines, has_rewrites
 
 
-def iterate_over_file(f, all_typos, found_typos):
+def iterate_over_file(
+    f: str, all_typos: Dict[str, str], found_typos: List[str]
+) -> Optional[Any]:
     with open(f, "r") as fname:
         raw_lines = fname.readlines()
 
