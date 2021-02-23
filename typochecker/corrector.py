@@ -37,13 +37,13 @@ def get_fix(line, typo_span, suggestion, orig):
     cnt = typo_span[1] - typo_span[0] + 1
 
     # assume tab <=> 4 spaces, to align '^'s with text
-    ws_cnt = sum([4 if c == "\t" else 1 for c in line[: typo_span[0]]])
+    ws_cnt = sum(4 if c == "\t" else 1 for c in line[: typo_span[0]])
     print(" " * ws_cnt + "^" * cnt)
 
     print("Suggestion: {}".format(suggestion))
 
     response_raw = input(
-        ('Correction ("!h" for help), default to {}: ').format(suggestion)
+        'Correction ("!h" for help), default to {}: '.format(suggestion)
     )
 
     response = UserInput(response_raw)
@@ -99,7 +99,7 @@ def get_fixed_line(line, matched_typo, fix):
     return line
 
 
-def iterate_over_file(f, all_typos, found_typos):
+def iterate_over_lines(raw_lines, all_typos, found_typos):
     has_rewrites = False
 
     all_lines = []
@@ -108,9 +108,6 @@ def iterate_over_file(f, all_typos, found_typos):
         return re.compile("|".join(r"\W" + found_typo + r"\W" for found_typo in typos))
 
     re_pat = get_regex(found_typos)
-
-    with open(f, "r") as fname:
-        raw_lines = fname.readlines()
 
     for raw_line in raw_lines:
         line = raw_line
@@ -128,7 +125,7 @@ def iterate_over_file(f, all_typos, found_typos):
             )
 
             if isinstance(fix, Quit):
-                return fix
+                return fix, False
             elif isinstance(fix, Keep):
                 # If skip the fix, assume rest of line is acceptable
                 break
@@ -157,6 +154,18 @@ def iterate_over_file(f, all_typos, found_typos):
             m = re_pat.search(line)
 
         all_lines.append(line)
+
+    return all_lines, has_rewrites
+
+
+def iterate_over_file(f, all_typos, found_typos):
+    with open(f, "r") as fname:
+        raw_lines = fname.readlines()
+
+    all_lines, has_rewrites = iterate_over_lines(raw_lines, all_typos, found_typos)
+
+    if isinstance(all_lines, Quit):
+        return all_lines
 
     if has_rewrites:
         with open(f, "w") as fname:
