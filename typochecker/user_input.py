@@ -1,3 +1,14 @@
+from typochecker.suggestion_response import (
+    Ignore,
+    Keep,
+    Literal,
+    Quit,
+    Response,
+    SuggestionResponse,
+    Unknown,
+)
+
+
 class UserInput(object):
     """
     >>> u = UserInput('')
@@ -67,32 +78,36 @@ class UserInput(object):
         return not commas_allowed and "," in self.input
 
 
-class UserResponse(object):
-    def __init__(self) -> None:
-        return
-
-
-class Keep(UserResponse):
-    def __init__(self) -> None:
-        super().__init__()
-        return
-
-
-class Quit(UserResponse):
+class UserResponse(SuggestionResponse):
     def __init__(self):
         super().__init__()
-        return
 
+    def get_response(self, line, typo_span, suggestion, orig, prompt) -> Response:
+        response_raw = input(prompt)
 
-class Ignore(UserResponse):
-    def __init__(self, s):
-        super().__init__()
-        self.word = s
-        return
+        response = UserInput(response_raw)
 
-
-class Literal(UserResponse):
-    def __init__(self, s):
-        super().__init__()
-        self.word = s
-        return
+        if response.quit():
+            return Quit()
+        elif response.get_help():
+            print(
+                "Commands:\n"
+                "\t!h for help\n"
+                "\t!q to quit\n"
+                '\t"!" or "/" to accept suggestion\n'
+                "\tleave blank and hit Enter to leave as-is\n"
+                '\t"!i" to ignore suggestion for rest of session'
+            )
+            return Unknown()
+        elif response.re_check():
+            """Some suggestions have multiple alternatives,
+            separated by commas; force to pick one"""
+            return Unknown()
+        elif response.accept_suggestion() and "," not in suggestion:
+            return Literal(suggestion)
+        elif response.literal():
+            return Literal(response.input)
+        elif response.keep_original():
+            return Keep()
+        elif response.ignore():
+            return Ignore(orig)
