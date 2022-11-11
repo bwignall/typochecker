@@ -2,8 +2,7 @@ import argparse
 import fileinput
 import os
 import re
-from typing import Pattern
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Pattern, Tuple
 
 from typochecker.suggestion_response import (
     AlwaysRespondIgnore,
