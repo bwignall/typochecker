@@ -17,6 +17,9 @@ jobs:
       - name: Install pipenv
         run: pip install pipenv
 
+      - name: Install dictionaries
+        run: sudo apt-get install wamerican-huge wbritish-huge
+
       - name: Run tests
         run: |
           pipenv install --dev
@@ -34,6 +37,9 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: 3.6
+
+    - name: Install dictionaries
+      run: sudo apt-get install wamerican-huge wbritish-huge
 
     - name: Run pre-commit
       uses: pre-commit/action@v2.0.3
